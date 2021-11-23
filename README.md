@@ -1,4 +1,4 @@
-# GameSharing
+# GameHub
 
 A full-stack web app using React (Hooks), Node, Express and MongoDB that brings gamers and gaming companies together. Gamers can add their favorite video games to their carts published by registered gaming companies.
 
