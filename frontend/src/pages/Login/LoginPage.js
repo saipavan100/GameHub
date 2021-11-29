@@ -4,7 +4,7 @@ import './styles/LoginPage.css';
 
 // Login page 
 // Nathaniel 
-function LoginPage() {
+const LoginPage = () => {
   // Used for navigating to Gamer page or Gaming company page
   let navigate = useNavigate();
 

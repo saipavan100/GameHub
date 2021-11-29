@@ -1,12 +1,36 @@
 /* Styles for NavBar for gaming company main page */
 /* Nathaniel */
 
-.navbar-light {
+.navBarCompany {
   background-color: #eee;
   border-bottom: 2px solid #bbb;
 }
 
-.navbar-light ul {
-  margin: 0;
-  list-style: none;
+.navItems {
+  margin-left: 20px;
+}
+
+.imageNavItem img {
+  width: 50px;
+  height: 50px;
+}
+
+.storeNavItem {
+  font-size: 20px;
+  font-weight: 520;
+}
+
+.myGamesNavItem {
+  font-size: 20px;
+  font-weight: 520;
+}
+
+.welcomeGamingCompany {
+  margin-right: 150px;
+  font-size: 20px;
+  font-weight: 520;
+}
+
+.logoutButton {
+  margin-right: 20px; 
 }
