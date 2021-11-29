@@ -1,5 +1,5 @@
-import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRef, useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import './styles/LoginPage.css';
 
 // Login page 
@@ -12,6 +12,10 @@ const LoginPage = () => {
   const userNameRef = useRef();
   const passwordRef = useRef();
   const roleRef = useRef();
+
+  // Handles setting the state of login error when users
+  // (gamer or gaming company) log in
+  let [loginError, setLoginError] = useState("");
 
   // Function for handling user login
   const handleLoginSubmit = async (event) => {
@@ -52,11 +56,13 @@ const LoginPage = () => {
 
       // If there is no existing user we want to render login error (via useState)
       if (!usersData.length) {
-        console.log("User does not exist (either incorrect username, password, and/or role credentials)");
+        setLoginError("User does not exist (either incorrect username, password, and/or role credentials)");
       }
 
       // If there is an existing user 
       else {
+        setLoginError("");
+
         // Store specific user attributes (_id, userName, and role) for current 
         // logged in user using sessionStorage
         let currUser = {
@@ -89,6 +95,9 @@ const LoginPage = () => {
       <div className="loginFormContainer">
         <form id="loginForm" onSubmit={handleLoginSubmit}>
           <div className="loginTitle">Login</div>
+          <div className="loginError">
+            {loginError}
+          </div>
           <div className="userNameSection">
             <label className="form-label">Username</label>
             <input className="form-control" type="text" ref={userNameRef} 
@@ -110,6 +119,9 @@ const LoginPage = () => {
           </div>
           <div className="loginSection">
             <button type="submit" className="btn btn-primary">Sign in</button>
+          </div>
+          <div className="navToRegisterSection">
+            Register <Link to="/register">here</Link> if you don't have an account
           </div>
         </form>
       </div>
