@@ -8,8 +8,8 @@ The objective of this project is to create a full-stack web application (using N
 
 ## Author
 
-Nathaniel Tesfalidet
-Yuanyuan Shen
+- Nathaniel Tesfalidet
+- Yuanyuan Shen
 
 ## Relevant Links
 - [Class website link](https://johnguerra.co/classes/webDevelopment_fall_2021/)
