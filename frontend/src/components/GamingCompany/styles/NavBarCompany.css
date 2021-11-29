@@ -1,6 +1,7 @@
-/* Styles for main gaming company page */
+/* Styles for NavBar for gaming company main page */
 /* Nathaniel */
-/*.navbar-light {
+
+.navbar-light {
   background-color: #eee;
   border-bottom: 2px solid #bbb;
 }
@@ -8,4 +9,4 @@
 .navbar-light ul {
   margin: 0;
   list-style: none;
-}*/
+}

@@ -3,7 +3,7 @@ import LoginPage from "./pages/Login/LoginPage.js";
 import GamingCompanyPage from "./pages/GamingCompany/GamingCompanyPage.js";
 import GamingCompanyStorePage from "./pages/GamingCompany/GamingCompanyStorePage.js";
 import MyGamesPage from "./pages/GamingCompany/MyGamesPage.js";
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
