@@ -89,42 +89,50 @@ const LoginPage = () => {
   } 
 
   return (
-    <div>
-      <h1 className="welcomeTitle">Welcome to GameHub</h1>
-      <h2 className="welcomeSubTitle">Bringing gamers and gaming companies together</h2>
-      <div className="loginFormContainer">
-        <form id="loginForm" onSubmit={handleLoginSubmit}>
-          <div className="loginTitle">Login</div>
-          <div className="loginError">
-            {loginError}
-          </div>
-          <div className="userNameSection">
-            <label className="form-label">Username</label>
-            <input className="form-control" type="text" ref={userNameRef} 
-            placeholder="Enter your username here" required />
-          </div>
-          <div className="passwordSection">
-            <label className="form-label">Password</label>
-            <input className="form-control" type="password" ref={passwordRef}
-            placeholder="Enter your password here" required />
-          </div>
-          <div className="roleSection">
-            <label htmlFor="roleSelectId">Select a role</label>
-            <select defaultValue={"Gamer"} className="form-select" type="form-control" ref={roleRef}
-              id="roleSelectId"
-            >
-              <option>Gamer</option>
-              <option>Gaming company</option>  
-            </select>
-          </div>
-          <div className="loginSection">
-            <button type="submit" className="btn btn-primary">Sign in</button>
-          </div>
-          <div className="navToRegisterSection">
-            Register <Link to="/register">here</Link> if you don't have an account
-          </div>
-        </form>
+    <div id="loginContainer">
+      <div className="row">
+        <h1 className="welcomeTitle1">Welcome to GameHub</h1>
+        <h2 className="welcomeTitle2">Bringing gamers and gaming companies together</h2>
+        <div className="col-sm-4 box border loginBox">
+          <form id="loginForm" onSubmit={handleLoginSubmit}>
+            <div className="loginTitle">Login</div>
+            <div className="loginError">
+              {loginError}
+            </div>
+            <div className="userNameSection">
+              <label className="form-label">Username</label>
+              <input className="form-control" type="text" ref={userNameRef} 
+              placeholder="Username" required />
+            </div>
+            <div className="passwordSection">
+              <label className="form-label">Password</label>
+              <input className="form-control" type="password" ref={passwordRef}
+              placeholder="Password" required />
+            </div>
+            <div className="roleSection">
+              <label htmlFor="roleSelectId">Select a role</label>
+              <select defaultValue={"Gamer"} className="form-select" type="form-control" ref={roleRef}
+                id="roleSelectId"
+              >
+                <option>Gamer</option>
+                <option>Gaming company</option>  
+              </select>
+            </div>
+            <hr />
+            <div className="d-grid gap-2 mx-auto center loginSection">
+              <button type="submit" className="btn btn-primary signInButton">Sign in</button>
+            </div>
+          </form>
+          <hr className="loginHR" />
+        </div>
+        <div className="center navToRegisterSection">
+          <Link to="/register"><button className="btn btn-primary register">Register if you don't have an account</button></Link>
+        </div>
       </div>
+      <div className="footer">
+        <div className="center footerSection1">Copyright 2021</div>
+        <div className="center footerSection2">Designed by Nathaniel & Yuanyuan</div>
+      </div>     
     </div>
   );
 }

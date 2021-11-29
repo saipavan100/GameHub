@@ -51,13 +51,14 @@ const RegisterPage = () => {
         <h2 className="title2">Start your Game Journey</h2>
         <div className="col-sm-4 box border registerBox">
           <form id="registerForm" onSubmit={registerHandler}>
+            <div className="registerTitle">Register</div>
             <div className="userName">
               <label className="label-of-form">Username</label>
-              <input className="form-control" type="text" ref={userNameRef} placeholder="Username"></input>
+              <input className="form-control" type="text" ref={userNameRef} placeholder="Username" required></input>
             </div>
             <div className="password">
               <label className="label-of-form">Password</label>
-              <input className="form-control" type="text" ref={passwordRef} placeholder="Password"></input>
+              <input className="form-control" type="password" ref={passwordRef} placeholder="Password" required></input>
             </div>
             <div className="selectRole">
               <label htmlFor="roleSelectId1" className="selectRole">Select a role</label>
