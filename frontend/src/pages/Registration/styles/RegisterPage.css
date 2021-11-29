@@ -1,0 +1,130 @@
+/* Styles for register page */
+/* Yuanyuan */
+
+#registerContainer {
+    background-image: url(../../../images/background.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.title {
+    font-family:'Roboto',sans-serif;
+    text-align: center;
+    margin-top: 10%;
+    color: #DCDCDC;
+}
+
+.title2 {
+    font-family:'Roboto',sans-serif;
+    text-align: center;
+    color: #DCDCDC;
+    font-size: 18px;
+}
+
+.registerBox {
+    /* text-align: center; */
+    font-family:'Roboto',sans-serif;
+    margin-top: 1%;
+    margin-left: 33.5%;
+    padding: 20px;
+    color: #DCDCDC;
+    background-color: rgba(169, 169, 169, 0.6);
+}
+
+.signUpContainer {
+    margin-top: 1%;
+    text-align: center;
+}
+
+.loginContainer {
+    margin-top: 1%;
+    text-align: center;
+}
+
+.footerSection1 {
+    margin-top: 1%;
+    text-align: center;
+}
+
+.footerSection2 {
+    margin-top: 1%;
+    text-align: center;
+}
+
+.signUpButton {
+    background-color:#696969;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #DCDCDC;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:300;
+    color:#DCDCDC;
+    text-align:center;
+    transition: all 0.2s; 
+}
+
+.login {
+    background-color:#696969;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #DCDCDC;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:300;
+    color:#DCDCDC;
+    text-align:center;
+    transition: all 0.2s;  
+}
+
+.registerHR {
+    color: rgba(169, 169, 169, 0.6);
+}
+
+.signUpButton:hover {
+    color:#DCDCDC;
+    background-color:rgba(255, 255, 255, 0);
+    border:0.1em solid #DCDCDC;
+}
+
+.login:hover {
+    color:#DCDCDC;
+    background-color:rgba(255, 255, 255, 0);
+    border:0.1em solid #DCDCDC;
+}
+
+/*.userName input {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0.2px 0.2px #888888;
+    background-color: rgba(255, 255, 255, 0.6);
+    font: 20px;
+}
+
+.password input {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0.2px 0.2px #888888;
+    background-color: rgba(255, 255, 255, 0.6);
+    font: 20px;
+}*/
+
+input {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0.2px 0.2px #888888;
+    background-color: rgba(255, 255, 255, 0.6);
+    font: 20px;
+}
+
+.footer {
+    margin-top: 10%;
+    color: #DCDCDC;
+}

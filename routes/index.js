@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const gameHubDB = require("../database/gameHubDB.js");
 
-
 // User login route (Nathaniel)
 router.post("/loginUser", async function (req, res) {
   // User data (request) from frontend  
@@ -20,6 +19,36 @@ router.post("/loginUser", async function (req, res) {
   }
 });
 
+// User Register route (Yuanyuan)
+// This route will insert user object into users collection
+router.post("/register", async function (req, res) {
+  let user = req.body;
+  let findUserObject = {
+    userName: user.userName,
+    role: user.role
+  }
+  try {
+    const userRes = await gameHubDB.findUser(findUserObject);
+    // checks whether the user does not exist
+    if (!userRes.length) {
+      console.log("This user does not exist");
+      if (user.role === "Gamer") {
+        user.cart = [];
+      }
+
+      if (user.role === "Gaming company") {
+        user.myGames = [];
+      }
+
+      const newUser = await gameHubDB.createUser(user);
+      console.log("User successfully registered", newUser);
+    }
+    res.status(200).send({ users: userRes });
+  } catch (error) {
+    console.log("Error message: ", error);
+    res.status(400).send({ err: error });
+  }
+});
 
 // Route for getting all games from gamestore collection (Nathaniel)
 router.get("/getAllStoreGames", async function (req, res) {

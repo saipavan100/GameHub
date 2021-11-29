@@ -34,6 +34,27 @@ function gameHubDB() {
     }
   };
 
+  // Create new user object and insert that into the database
+  // This function is called when a user sign up in GameHub
+  // Yuanyuan
+  gameHubDB.createUser = async function (user) {
+    let client;
+    try {
+      client = new MongoClient(URL, {useUnifiedTopology: true});
+      console.log("Connecting Database");
+      await client.connect();
+      console.log("Connected Successfully");
+      const res = await client.db(DB_NAME).collection("users").insertOne(user);
+      console.log("Inserted", res);
+      return res;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      console.log("Closing Connection");
+      client.close();
+    }
+  };
+
   // Queries and gets all the games from the gamestore collection
   // Nathaniel
   gameHubDB.getAllStoreGames = async function () {
