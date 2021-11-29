@@ -3,7 +3,7 @@ import './styles/GamingCompanyPage.css';
 
 // Gaming company main page
 // Nathaniel 
-function GamingCompanyPage() {
+const GamingCompanyPage = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg sticky-top navbar-light">

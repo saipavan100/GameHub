@@ -1,105 +1,70 @@
-import { useRef } from "react";
-import { MyGamesList } from "../../components/GamingCompany/MyGamesList.js";
+import { useState, useEffect } from "react";
+import MyGamesList from "../../components/GamingCompany/MyGamesList.js";
+import PublishGameForm from "../../components/GamingCompany/PublishGameForm.js";
 import "./styles/MyGamesPage.css";
 
-// Gaming company personal page
+// Gaming company's personal page (MyGames page)
 // Nathaniel
-function MyGamesPage() {
+const MyGamesPage = () => {
   // Current user data (gaming company)
   let currUserData = sessionStorage.getItem("currUser");
   currUserData = JSON.parse(currUserData);
 
-  // References to input from publish game form 
-  const gameTitleRef = useRef();
-  const gameImageURLRef = useRef();
-  const gameDescRef = useRef();
-  const gamePriceRef = useRef();
+  // myGames state holds the array of my games for a gaming company
+  // setMyGames will set the state of myGames 
+  let [myGames, setMyGames] = useState([]);
 
-  // Function for handling user login
-  const handlePublishGameSubmit = async (event) => {
-    event.preventDefault();
+  // Function for loading my games data for a gaming company user
+  const loadMyGamesData = async () => {
+    console.log("Getting my games ...");
 
-    // Input data holds data for game to publish (from publish game form)
-    // and current gaming company user.
-    // gamingCompanyUser is used for querying purposes when adding
-    // a game to gaming company's my games and gameInputData is used for
-    // adding a game to gaming company's my games and game store. 
-    const inputData = {
-      gamingCompanyUser: {
-        _id: currUserData._id,
+    // Send gaming company user data to /api/getMyGames route and
+    // return the response (as raw data).
+    // The response we get is the gaming company's games
+    const gamingCompanyUser = {
         userName: currUserData.userName,
         role: currUserData.role,
-      },
-      gameInputData: {
-        gameTitle: gameTitleRef.current.value, 
-        gameImageURL: gameImageURLRef.current.value,
-        gameDesc: gameDescRef.current.value,
-        gamePrice: gamePriceRef.current.value,
-        publishedBy: currUserData.userName,
-      }
-    }
+    };
 
-    // Send input data to /api/publishGame route and
-    // return the response (as raw data) from backend after
-    // adding gameInputData to gamestore collection
-    // and to the current gaming company's my games    
-    const publishGameResRawData = await fetch("/api/publishGame", {
+    const myGamesResRawData = await fetch("/api/getMyGames", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(inputData),
+      body: JSON.stringify(gamingCompanyUser),
     });
 
     // If response is not returned successfully
-    if (!publishGameResRawData.ok) {
-      console.log("Response status ", publishGameResRawData.status);
+    if (!myGamesResRawData.ok) {
+      console.log("Response status ", myGamesResRawData.status);
     }
 
     // If response is returned successfully
     else {
-      let publishGameResData = await publishGameResRawData.json();
-      console.log(publishGameResData.message);
+      let myGamesResData = await myGamesResRawData.json();
+
+      // An array of the current gaming company's games
+      let myGamesData = myGamesResData.myGames;
+      // setMyGames will trigger a re render of the MyGamesList
+      // component
+      setMyGames(myGamesData);
     }
-  }
+  };
+
+  // useEffect for loading my games data and re-rendering MyGames page
+  // once.
+  // This prevents the MyGames page (component) from loading my games data
+  // and re-rendering in a loop.
+  useEffect(() => {
+    console.log("The effect (loading my games)");
+    loadMyGamesData();
+  }, []);
 
   return (
     <div>
-      <div className="publishGameFormContainer">
-        <form id="publishGameForm" onSubmit={handlePublishGameSubmit}>
-          <div className="publishGameFormTitle">Publish your game</div>
-          <div className="publishGameFormSection1">
-            <div className="gameTitle">
-              <label className="form-label">Game Title</label>
-              <input className="form-control" type="text" ref={gameTitleRef}
-              placeholder="Enter game title here" required />
-            </div>
-            <div className="gameImage">
-              <label className="form-label">Game Image</label>
-              <input className="form-control" type="text" ref={gameImageURLRef} 
-              placeholder="Enter game image URL here" required />
-            </div>
-          </div>
-          <div className="publishGameFormSection2">
-            <div className="gameDescription">
-              <label className="form-label">Game Description</label>
-              <textarea className="form-control" cols="25" rows="2" ref={gameDescRef} 
-                placeholder="Enter game description here" required
-              ></textarea>
-            </div>
-            <div className="gamePrice">
-              <label className="form-label">Game Price</label>
-              <input className="form-control" type="text" ref={gamePriceRef} 
-              placeholder="Enter game price here" required />
-            </div>
-          </div>
-          <div className="publishGameSection">
-            <button type="submit" className="btn btn-success">Publish game</button>
-          </div>
-        </form>
-      </div>
+      <PublishGameForm loadMyGamesData={loadMyGamesData}></PublishGameForm>
       <h2 className="myGamesTitle">My Games</h2>
-      <MyGamesList></MyGamesList>
+      <MyGamesList myGames={myGames} loadMyGamesData={loadMyGamesData}></MyGamesList>
     </div>
   );
 }

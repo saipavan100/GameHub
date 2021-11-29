@@ -57,7 +57,7 @@ function gameHubDB() {
     }
   };
 
-  // Inserts game object to gameStore collection
+  // Inserts game object to gamestore collection
   // This function is called when a gaming company publishes a game
   // Nathaniel
   gameHubDB.publishGameToStore = async function (game) {
@@ -80,7 +80,8 @@ function gameHubDB() {
     }
   }
 
-  // Add a game to the myGames array of a gaming company user
+  // Add game object to the myGames array of a gaming company user
+  // This function is called when a gaming company publishes a game
   // Nathaniel
   gameHubDB.addGameToMyGames = async function (gamingCompanyUser, game) {
     let client;
@@ -94,11 +95,68 @@ function gameHubDB() {
       // returns the response of updating myGames field 
       // (inserting game object to myGames field) 
       // of a gaming company user
-      return await usersCollection.updateOne(
-        // userName: gamingCompanyUser.userName,
-        // role: gamingCompanyUser.role, 
+      return await usersCollection.updateOne( 
         { _id: new ObjectId(gamingCompanyUser._id) },
         { $push: { myGames: game } }
+      );
+    } catch (error) {
+      console.log(error);
+    } finally {
+      console.log("Closing connection to game-hub-db");
+      await client.close();
+    }
+  }
+
+  // Delete game object from gamestore collection
+  // This function is called when a gaming company deletes a game
+  // from their my games list.
+  // Nathaniel
+  gameHubDB.deleteGameFromStore = async function (game) {
+    let client;
+    try {
+      client = new MongoClient(URL, { useUnifiedTopology: true });
+      console.log("Connecting to game-hub-db");
+      await client.connect();
+      console.log("Connected to game-hub-db");
+      const db = client.db(DB_NAME);
+      const gameStoreCollection = db.collection("gamestore");
+      // returns the response of deleting game object from
+      // the gamestore collection
+      return await gameStoreCollection.deleteOne({
+        _id: new ObjectId(game._id),
+        gameTitle: game.gameTitle,
+        gameImageURL: game.gameImageURL,
+        gameDesc: game.gameDesc,
+        gamePrice: game.gamePrice,
+        publishedBy: game.publishedBy
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      console.log("Closing connection to game-hub-db");
+      await client.close();
+    }
+  }
+
+  // Delete game object from the myGames array of a gaming company user
+  // This function is called when a gaming company deletes a game
+  // from their my games list.
+  // Nathaniel
+  gameHubDB.deleteGameFromMyGames = async function (gamingCompanyUser, game) {
+    let client;
+    try {
+      client = new MongoClient(URL, { useUnifiedTopology: true });
+      console.log("Connecting to game-hub-db");
+      await client.connect();
+      console.log("Connected to game-hub-db");
+      const db = client.db(DB_NAME);
+      const usersCollection = db.collection("users");
+      // returns the response of updating myGames field 
+      // (deleting game object from myGames field) 
+      // of a gaming company user
+      return await usersCollection.updateOne(
+        { _id: new ObjectId(gamingCompanyUser._id) },
+        { $pull: { myGames: { _id: new ObjectId(game._id) } } }
       );
     } catch (error) {
       console.log(error);

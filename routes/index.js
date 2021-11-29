@@ -42,7 +42,6 @@ router.get("/getAllStoreGames", async function (req, res) {
 router.post("/publishGame", async function (req, res) {
   // Game data (request) from frontend  
   const game = req.body.gameInputData;
-  console.log(game);
   // Gaming company user data (request) from frontend
   const gamingCompanyUser = req.body.gamingCompanyUser;
 
@@ -74,7 +73,31 @@ router.post("/getMyGames", async function (req, res) {
     res.status(200).send({ myGames: gamingCompanyUserRes[0].myGames });
 
   } catch (error) {
-    console.log("login user error message: ", error);
+    console.log("get my games error message: ", error);
+    res.status(400).send({ err: error });
+  }
+});
+
+// Delete my game route performs two operations:
+// 1. Deletes game object from gamestore collection
+// 2. Deletes game object from myGames array for a gaming company user 
+router.post("/deleteMyGame", async function (req, res) {
+  // Game data (request) from frontend  
+  const game = req.body.gameInputData;
+  //console.log(game);
+  // Gaming company user data (request) from frontend
+  const gamingCompanyUser = req.body.gamingCompanyUser;
+
+  try {
+    // Response of deleting a game from gamestore collection
+    const delGameRes = await gameHubDB.deleteGameFromStore(game);
+    console.log("Deleted game to game-hub-db ", delGameRes);
+    // Response of deleting a game from my games for a gaming company user
+    const delGameFromMyGamesRes = await gameHubDB.deleteGameFromMyGames(gamingCompanyUser, game);
+    console.log("Updated my games in game-hub-db ", delGameFromMyGamesRes);
+    res.status(200).send({ message: "Deleted game from game store and my games" })
+  } catch (error) {
+    console.log("delete game error message: ", error)
     res.status(400).send({ err: error });
   }
 });

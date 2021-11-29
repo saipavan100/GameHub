@@ -1,7 +1,7 @@
-/* Styles for MyGames page for a gaming company user */
+/* Styles for PublishGameForm component */
 /* Nathaniel */
 
-/*.publishGameFormContainer {
+.publishGameFormContainer {
   padding-top: 10px;
   width: 40%;
   margin-left: 30%;
@@ -40,12 +40,12 @@
 .publishGameSection {
   text-align: center;
   padding-bottom: 10px;
-}  */
+}  
 
-.myGamesTitle {
+/*.myGamesTitle {
   padding-top: 20px;
   text-align: center;
   font-weight: 510;
   font-size: 30px;
   padding-bottom: 20px;
-}
+}*/

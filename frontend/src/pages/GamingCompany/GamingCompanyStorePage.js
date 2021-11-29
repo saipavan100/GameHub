@@ -3,7 +3,7 @@ import "./styles/GamingCompanyStorePage.css";
 
 // Gaming company store page
 // Nathaniel
-function GamingCompanyStorePage() {
+const GamingCompanyStorePage = () => {
   return (
     <div>
       <h2 className="gameStoreTitle">Game Store</h2>
