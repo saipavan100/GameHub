@@ -6,7 +6,7 @@ This repository is for Project 3 for the CS5610 Web Development Course.
 
 The objective of this project is to create a full-stack web application (using Node, Express, MongoDB, and React with Hooks) called GameHub that brings gamers and gaming companies together. GameHub serves as a simple e-commerce web app where registered gamers can view video games, published by registered gaming companies, from the game store and add their favorite video games from the game store into their cart. Gamers also have the option to remove certain video games from their cart. GameHub allows registered gaming companies to publish their video games. After a gaming company publishes their game, they can view their published game from their personal list (MyGames) and from the game store. A gaming company can also have the option to remove their published game from their personal list which would update the game store.  
 
-## Author
+## Author(s)
 
 - Nathaniel Tesfalidet
 - Yuanyuan Shen
