@@ -1,7 +1,7 @@
-import { StoreGamesList } from "../../components/GamingCompany/StoreGamesList.js";
+import StoreGamesList from "../../components/GamingCompany/StoreGamesList.js";
 import "./styles/GamingCompanyStorePage.css";
 
-// Gaming company store page
+// Gaming company's store page
 // Nathaniel
 const GamingCompanyStorePage = () => {
   return (

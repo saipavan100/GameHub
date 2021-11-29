@@ -3,7 +3,7 @@ import './styles/StoreGamesItem.css';
 // A component for each store game item that is
 // rendered in the StoreGamesList component
 // Nathaniel
-export function StoreGamesItem({ game }) {
+const StoreGamesItem = ({ game }) => {
   return (
     <div>
       <div className="storeGamesItemContainer">

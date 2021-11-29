@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { StoreGamesItem } from "./StoreGamesItem.js";
+import StoreGamesItem from "./StoreGamesItem.js";
 import './styles/StoreGamesList.css';
 
 // Store games list component for gaming company
 // Nathaniel
-export function StoreGamesList() {
+const StoreGamesList = () => {
 
   // storeGames state holds the array of games from the store
   // setStoreGames will set the state of storeGames 

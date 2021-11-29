@@ -10,10 +10,10 @@ const PublishGameForm = ({ loadMyGamesData }) => {
   currUserData = JSON.parse(currUserData);
 
   // References to input from publish game form 
-  const gameTitleRef = useRef();
-  const gameImageURLRef = useRef();
-  const gameDescRef = useRef();
-  const gamePriceRef = useRef();
+  let gameTitleRef = useRef();
+  let gameImageURLRef = useRef();
+  let gameDescRef = useRef();
+  let gamePriceRef = useRef();
 
   // Function for handling publishing a game.
   // When a gaming company publishes a game, the game gets published to
@@ -40,6 +40,12 @@ const PublishGameForm = ({ loadMyGamesData }) => {
         publishedBy: currUserData.userName,
       }
     }
+
+    // Reset form fields
+    gameTitleRef.current.value = "";
+    gameImageURLRef.current.value = "";
+    gameDescRef.current.value = "";
+    gamePriceRef.current.value = "";
 
     // Send input data to /api/publishGame route and
     // return the response (as raw data) from backend after
