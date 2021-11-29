@@ -1,6 +1,6 @@
 import './styles/MyGamesItem.css';
 
-// MyGamesItem component for each game in
+// MyGamesItem component for each game from
 // the MyGamesList component. 
 // Takes game object and loadMyGamesData function as props
 // from MyGamesList component.
@@ -9,7 +9,6 @@ const MyGamesItem = ({ game, loadMyGamesData }) => {
   // Current user data (gaming company)
   let currUserData = sessionStorage.getItem("currUser");
   currUserData = JSON.parse(currUserData);
-
 
   // Function for handling deleting a gaming company's game.
   // Deleting a gaming company's game will also remove the game

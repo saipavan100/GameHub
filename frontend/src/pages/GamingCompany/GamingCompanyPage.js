@@ -19,7 +19,10 @@ const GamingCompanyPage = () => {
           </li>
         </ul>
       </nav>
-      {/* Renders the children routes from above */}
+      {/* Renders the children routes of /gamingCompany route from App.js */}
+      {/* The children routes are: /gamingCompany and /gamingCompany/myGames */}
+      {/* Route /gamingCompany points to GamingCompanyStorePage */}
+      {/* Route /gamingCompany/myGames points to MyGamesPage */}
       <Outlet></Outlet>
     </div>
   );

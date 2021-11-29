@@ -1,7 +1,9 @@
 import './styles/StoreGamesItem.css';
 
-// A component for each store game item that is
-// rendered in the StoreGamesList component
+// StoreGamesItem component for each game from
+// the StoreGamesList component.
+// Takes game object as props from the 
+// StoreGamesList component.
 // Nathaniel
 const StoreGamesItem = ({ game }) => {
   return (
