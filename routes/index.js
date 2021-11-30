@@ -19,7 +19,7 @@ router.post("/loginUser", async function (req, res) {
   }
 });
 
-// User Register route (Yuanyuan)
+// User register route (Yuanyuan)
 // This route will insert user object into users collection
 router.post("/register", async function (req, res) {
   let user = req.body;
@@ -132,5 +132,51 @@ router.post("/deleteMyGame", async function (req, res) {
 });
 
 /// Routes for gaming company (Nathaniel) ///
+
+////////////////////////////////////////////////////////////////////////////////
+
+/// Routes for gamer (Yuanyuan) ///
+
+// Add to cart route performs: Add game object to cart collection
+router.post("/addToCart", async function (req, res) {
+  const user = req.body.user;
+  const game = req.body.game;
+  try {
+    const addGameToCart = await gameHubDB.addGameToCart(game, user);
+    console.log("Added game to user's cart", addGameToCart);
+    res.status(200).send({ success: true });
+  } catch (error) {
+    console.log("add game error: ", error)
+    res.status(400).send({ err: error });
+  }
+});
+
+// Get Cart Lists
+router.get("/getCartItems", async function (req, res) {
+  const gamer = req.body;
+  console.log("Find gamer:", gamer);
+  console.log("User's cart:", gamer.cart);
+  try {
+    res.status(200).send({ cart: gamer.cart });
+  } catch (error) {
+    res.status(400).send({ err: error });
+  }
+});
+
+// Delete Items from cart
+router.post("/deleteCartItem", async function (req, res) {
+  const game = req.body.gameInfo;
+  const user = req.body.gamer;
+  try {
+    const deleteItemFromCart = await gameHubDB.deleteItems(user, game);
+    console.log("Deleted the game item", deleteItemFromCart);
+    res.status(200).send({ success: true });
+  } catch (error) {
+    console.log("Delete game error: ", error)
+    res.status(400).send({ err: error });
+  }
+});
+
+/// Routes for gamer (Yuanyuan) ///
 
 module.exports = router;

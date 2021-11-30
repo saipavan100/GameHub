@@ -1,0 +1,6 @@
+/* Yuanyuan: Style sheet for store page */
+#StoreItems {
+    background-image: url(../../../images/background.jpg);
+    background-repeat: repeat;
+    background-size: 100%;
+}

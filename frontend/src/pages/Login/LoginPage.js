@@ -76,7 +76,8 @@ const LoginPage = () => {
         // If user role is gamer
         if (usersData[0].role === "Gamer") {
           // Navigate to Gamer page
-          console.log("Navigate to Gamer page");
+          //console.log("Navigate to Gamer page");
+          navigate("/gamer");
         }
 
         // If user role is gaming company

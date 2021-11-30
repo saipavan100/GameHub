@@ -187,6 +187,57 @@ function gameHubDB() {
     }
   }
 
+  // When gamers adds games to their cart, games will be insert into cart collection.
+  // This function is called when gamers are adding game objects to their cart.
+  // Yuanyuan
+  gameHubDB.addGameToCart = async function (game, user) {
+    let client;
+    // check whether the user is a gamer
+    // if the user is a gamer, then we are doing following things
+    try {
+      client = new MongoClient(URL, { useUnifiedTopology: true });
+      console.log("Connecting to game-hub-db");
+      await client.connect();
+      console.log("Successfully connected");
+      const db = client.db(DB_NAME);
+      const usersCollection = db.collection("users");
+      console.log(user);
+      console.log(game);
+      return await usersCollection.updateOne(
+        { _id: new ObjectId(user._id) },
+        { $push: { cart: game } }
+      );
+    } catch (error) {
+      console.log(error);
+    } finally {
+      console.log("Closing");
+      await client.close();
+    }
+  }
+
+  // Delete items from cart array
+  // Yuanyuan
+  gameHubDB.deleteItems = async function (user, game) {
+    let client;
+    try {
+      client = new MongoClient(URL, { useUnifiedTopology: true });
+      console.log("Connecting to game-hub-db");
+      await client.connect();
+      console.log("Successfully connected");
+      const db = client.db(DB_NAME);
+      const usersCollection = db.collection("users");
+      return await usersCollection.updateOne(
+        { _id: new ObjectId(user._id) },
+        { $pull: { cart: { gameTitle: game.gameTitle } } }
+      );
+    } catch (error) {
+      console.log(error);
+    } finally {
+      console.log("Closing connect");
+      await client.close();
+    }
+  }
+
 
   return gameHubDB;
 }
