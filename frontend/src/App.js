@@ -7,7 +7,6 @@ import MyGamesPage from "./pages/GamingCompany/MyGamesPage.js";
 import GamerPage from "./pages/Gamer/GamerPage.js";
 import GamerStorePage from "./pages/Gamer/GamerStorePage.js";
 import GamerCartPage from "./pages/Gamer/GamerCartPage.js";
-import "./App.css";
 
 function App() {
   return (
