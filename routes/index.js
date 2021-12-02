@@ -154,10 +154,9 @@ router.post("/addToCart", async function (req, res) {
 // Get Cart Lists
 router.get("/getCartItems", async function (req, res) {
   const gamer = req.body;
-  console.log("Find gamer:", gamer);
-  console.log("User's cart:", gamer.cart);
   try {
-    res.status(200).send({ cart: gamer.cart });
+    const gamerRes = await gameHubDB.findUser(gamer);
+    res.status(200).send({ cart: gamerRes.cart });
   } catch (error) {
     res.status(400).send({ err: error });
   }
