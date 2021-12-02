@@ -12,6 +12,7 @@ const NavBarGamer = () => {
                     <li className="nav-item navItemStore"><Link to="/gamer/gamerStore"><button className="button"><span>Store</span></button></Link></li>
                 </ul>
             </div>
+            <Link className="btn btn-primary logoutButton" to="/">Logout</Link>
         </nav>
     );
 }
