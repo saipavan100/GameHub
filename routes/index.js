@@ -152,11 +152,11 @@ router.post("/addToCart", async function (req, res) {
 });
 
 // Get Cart Lists
-router.get("/getCartItems", async function (req, res) {
+router.post("/getCartItems", async function (req, res) {
   const gamer = req.body;
   try {
     const gamerRes = await gameHubDB.findUser(gamer);
-    res.status(200).send({ cart: gamerRes.cart });
+    res.status(200).send({ cart: gamerRes[0].cart });
   } catch (error) {
     res.status(400).send({ err: error });
   }

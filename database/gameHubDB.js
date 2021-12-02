@@ -39,11 +39,6 @@ function gameHubDB() {
   // Yuanyuan
   gameHubDB.createUser = async function (user) {
     let client;
-    // check whether the user is Gamer or not
-    // only gamer has cart property
-    if (user.role === "Gamer") {
-      user.cart = [];
-    }
     try {
       client = new MongoClient(URL, {useUnifiedTopology: true});
       console.log("Connecting Database");
@@ -233,7 +228,8 @@ function gameHubDB() {
       const usersCollection = db.collection("users");
       return await usersCollection.updateOne(
         { _id: new ObjectId(user._id) },
-        { $pull: { cart: { gameTitle: game.gameTitle } } }
+        // { $pull: { cart: { gameTitle: game.gameTitle } } }
+        { $pull: { cart: { _id: game._id } } }
       );
     } catch (error) {
       console.log(error);

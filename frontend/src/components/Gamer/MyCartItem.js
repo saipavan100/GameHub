@@ -4,9 +4,8 @@ import "./styles/MyCartItem.css";
 // This is a component for each game item in gamer's cart
 // It will be used to render each product
 // Yuanyuan
-const MyCartItem = ({ game, cartItemInfo }) => {
+const MyCartItem = ({ game, getCartItems }) => {
     let curUser = JSON.parse(sessionStorage.getItem("currUser"));
-    console.log("sad", cartItemInfo);
     const deleteButtonHandler = async (event) => {
         const userInfo = {
             gamer: {
@@ -29,12 +28,12 @@ const MyCartItem = ({ game, cartItemInfo }) => {
             let deleteItem = await deleteHandler.json();
             alert("You have removed the item successfully!")
         }
-        cartItemInfo();
+        getCartItems();
     }
     return (
         <div className="card mb-30">
             <div>
-                <div class="mainImg"><img src={game.gameImageURL} alt="cartGameImg" /></div>
+                <div className="mainImg"><img src={game.gameImageURL} alt="cartGameImg" /></div>
             </div>
             <div className="card-body text-center">
                 <h4 className="card-title">{game.gameTitle}</h4>

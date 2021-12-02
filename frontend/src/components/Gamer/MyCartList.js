@@ -4,11 +4,11 @@ import "./styles/MyCartList.css";
 
 // Yuanyuan
 // Cart List, holing cart items
-const MyCartList = ({ cart, cartItemInfo }) => {
+const MyCartList = ({ cart, getCartItems }) => {
 
   const cartList = () => {
     return cart.map((c) => (
-      <MyCartItem key={`cartGameID_${c._id}`} cartItemInfo={cartItemInfo} game={c}></MyCartItem>
+      <MyCartItem key={`gameID_${c._id}`} getCartItems={getCartItems} game={c}></MyCartItem>
     ));
   }
 

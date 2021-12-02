@@ -8,13 +8,11 @@ import "./styles/GamerCartPage.css"
 // Gamer Cart Page
 const GamerCartPage = () => {
   let curUser = JSON.parse(sessionStorage.getItem("currUser"));
-  let [cartItem, setCartItem] = useState([]);
-  console.log("cartItem:", cartItem);
-  const cartItemInfo = async () => {
+  let [cartItems, setCartItems] = useState([]);
+  const getCartItems = async () => {
     const userInfo = {
       userName: curUser.userName,
       role: curUser.role,
-      cart: curUser.cart,
     };
     const cartInfo = await fetch("/api/getCartItems" , {
       method: "POST",
@@ -27,21 +25,20 @@ const GamerCartPage = () => {
     if (!cartInfo.ok) {
       console.log("Error:", cartInfo.status);
     } else {
-      let userCart = await cartInfo.json();
-      let cartItems = userCart.cart; 
-      console.log("Cart items are:", cartItems);
-      setCartItem(cartItems);
+      let userCartData = await cartInfo.json();
+      let userCart = userCartData.cart;
+      console.log("Cart items are:", userCart);
+      setCartItems(userCart);
     }
   };
   useEffect(() => {
-    cartItemInfo()
+    getCartItems()
   }, []);
 
   return (
     <div id="gamerCartContainer">
       <NavBarGamer />
-      {/*<MyCartList cart={curUser.cart} cartItemInfo={cartItemInfo} />*/}
-      <MyCartList cart={cartItem} cartItemInfo={cartItemInfo} />
+      <MyCartList cart={cartItems} getCartItems={getCartItems} />
       <div className="footer">
         <div className="center">Copyright 2021</div>
         <div className="center">Designed by Nathaniel & Yuanyuan</div>

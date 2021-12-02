@@ -1,10 +1,14 @@
 import "./styles/StoreItem.css";
+import {v4 as uuidv4} from "uuid"; 
 
 // Yuanyuan
-// Store items
+// Store item
 const StoreItem = ({ game }) => {
   let curUser = JSON.parse(sessionStorage.getItem("currUser"));
   const addHandler = async (game) => {
+    // Update id for game item
+    game._id = game._id + "_" + uuidv4();
+
     const addInputData = {
       user: curUser,
       game: game

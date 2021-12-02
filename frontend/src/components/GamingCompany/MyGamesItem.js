@@ -1,4 +1,4 @@
-import './styles/MyGamesItem.css';
+import "./styles/MyGamesItem.css";
 
 // MyGamesItem component for each game from
 // the MyGamesList component. 

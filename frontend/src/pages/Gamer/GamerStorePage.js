@@ -8,7 +8,6 @@ import "./styles/GamerStorePage.css"
 // Gamer Store Page
 const GamerStorePage = () => {
     let [storeItem, setStoreItem] = useState([]);
-    console.log("gaga", storeItem);
     const getStoreItems = async () => {
         const storeItemsInfo = await fetch("/api/getAllStoreGames");
         if (!storeItemsInfo.ok) {
