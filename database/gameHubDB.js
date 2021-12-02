@@ -228,7 +228,6 @@ function gameHubDB() {
       const usersCollection = db.collection("users");
       return await usersCollection.updateOne(
         { _id: new ObjectId(user._id) },
-        // { $pull: { cart: { gameTitle: game.gameTitle } } }
         { $pull: { cart: { _id: game._id } } }
       );
     } catch (error) {
