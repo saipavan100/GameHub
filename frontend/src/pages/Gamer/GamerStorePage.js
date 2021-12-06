@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import NavBarGamer from "../../components/Gamer/NavBarGamer.js";
 import StoreList from "../../components/Gamer/StoreList.js";
-import "./styles/GamerStorePage.css"
+import "./styles/GamerStorePage.css";
 
 // Yuanyuan
 // Gamer Store Page
@@ -17,7 +17,7 @@ const GamerStorePage = () => {
             let storeGamesData = storeResData.storeGames;
             setStoreItem(storeGamesData);
         }
-    }
+    };
     useEffect(() => {
         getStoreItems();
     }, []);
@@ -31,6 +31,6 @@ const GamerStorePage = () => {
             </div>
         </div>
     );
-}
+};
 
 export default GamerStorePage;

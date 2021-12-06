@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import NavBarGamer from "../../components/Gamer/NavBarGamer.js";
 import MyCartList from "../../components/Gamer/MyCartList";
-import "./styles/GamerCartPage.css"
+import "./styles/GamerCartPage.css";
 
 // Yuanyuan
 // Gamer Cart Page
@@ -14,7 +14,7 @@ const GamerCartPage = () => {
       userName: curUser.userName,
       role: curUser.role,
     };
-    const cartInfo = await fetch("/api/getCartItems" , {
+    const cartInfo = await fetch("/api/getCartItems", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const GamerCartPage = () => {
     }
   };
   useEffect(() => {
-    getCartItems()
+    getCartItems();
   }, []);
 
   return (
@@ -45,6 +45,6 @@ const GamerCartPage = () => {
       </div>
     </div>
   );
-}
+};
 
 export default GamerCartPage;
