@@ -5,7 +5,8 @@
   "description": "A web app that allows gamers to add their favorites video games to their carts and gaming companies to publish their video games.",
   "private": true,
   "scripts": {
-    "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www"
+    "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www",
+    "heroku-postbuild": "cd frontend && yarn install && yarn build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
