@@ -32,28 +32,19 @@ const MyCartItem = ({ game, getCartItems }) => {
         getCartItems();
     };
     return (
-        <div className="card mb-30">
-            <div>
-                <div className="mainImg">
+        <div className="gamerCartItemContainer">
+            <div className="gamerCartItemSection1">
+                <div className="cartMainImg">
                     <img src={game.gameImageURL} alt="cartGameImg" />
                 </div>
+                <div className="gamerCartItemTitle">{game.gameTitle}</div>
+                <div className="gamerCartItemPublishedBy">{game.publishedBy}</div>
             </div>
-            <div className="card-body text-center">
-                <h4 className="card-title">{game.gameTitle}</h4>
-                <h5 className="card-text">
-                    <small>price: </small>${game.gamePrice}
-                </h5>
-                <h5 className="card-text">
-                    <small>published by: </small>
-                    {game.publishedBy}
-                </h5>
-                <button
-                    onClick={() => deleteButtonHandler()}
-                    className="btn btn-sm btn-warning float-right"
-                >
-                    Delete this item
-                </button>
-            </div>
+            <div className="gamerCartItemPrice">{game.gamePrice}</div>
+            <div className="gamerCartItemDescription">{game.gameDesc}</div>
+            <button onClick={() => deleteButtonHandler()} className="btn btn-sm btn-warning float-right">
+                Delete this item
+            </button>
         </div>
     );
 };
