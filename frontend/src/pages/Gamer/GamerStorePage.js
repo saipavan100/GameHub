@@ -25,7 +25,7 @@ const GamerStorePage = () => {
         <div id="StoreItems">
             <NavBarGamer />
             <StoreList game={storeItem}></StoreList>
-            <div className="footer">
+            <div className="footer storeFooter">
                 <div className="center">Copyright 2021</div>
                 <div className="center">Designed by Nathaniel & Yuanyuan</div>
             </div>

@@ -5,7 +5,6 @@ import GamingCompanyPage from "./pages/GamingCompany/GamingCompanyPage.js";
 import GamingCompanyStorePage from "./pages/GamingCompany/GamingCompanyStorePage.js";
 import PublishGamePage from "./pages/GamingCompany/PublishGamePage.js";
 import MyGamesPage from "./pages/GamingCompany/MyGamesPage.js";
-import GamerPage from "./pages/Gamer/GamerPage.js";
 import GamerStorePage from "./pages/Gamer/GamerStorePage.js";
 import GamerCartPage from "./pages/Gamer/GamerCartPage.js";
 import "./App.css";
@@ -23,8 +22,7 @@ function App() {
             <Route path="myGames" element={<MyGamesPage />} />
           </Route>
 
-          <Route path="/gamer" element={<GamerPage />}></Route>
-          <Route path="/gamer/gamerStore" element={<GamerStorePage />}></Route>
+          <Route path="/gamer" element={<GamerStorePage />}></Route>
           <Route path="/gamer/myCart" element={<GamerCartPage />}></Route>
         </Routes>
       </BrowserRouter>
