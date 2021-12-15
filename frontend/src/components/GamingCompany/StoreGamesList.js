@@ -2,8 +2,8 @@ import StoreGamesItem from "./StoreGamesItem.js";
 import PropTypes from "prop-types";
 import "./styles/StoreGamesList.css";
 
-// StoreGamesList component for the gaming company's store page.
-// Takes storeGames array as props from the gaming company's
+// StoreGamesList component for the gaming company publicist's store page.
+// Takes storeGames array as props from the gaming company publicist's
 // store page (GamingCompanyStorePage).
 // Nathaniel
 const StoreGamesList = ({ storeGames }) => {

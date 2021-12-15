@@ -1,12 +1,15 @@
 import { useRef } from "react";
-import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import "./styles/PublishGameForm.css";
 
 // Publish game form component for MyGames page.
 // Takes loadMyGamesData function as props from MyGames page.
 // Nathaniel
-const PublishGameForm = ({ loadMyGamesData }) => {
-  // Current user data (gaming company)
+const PublishGameForm = () => {
+  // Used for navigating to My Games page
+  let navigate = useNavigate();
+
+  // Current user data (gaming company publicist)
   let currUserData = sessionStorage.getItem("currUser");
   currUserData = JSON.parse(currUserData);
 
@@ -17,16 +20,16 @@ const PublishGameForm = ({ loadMyGamesData }) => {
   let gamePriceRef = useRef();
 
   // Function for handling publishing a game.
-  // When a gaming company publishes a game, the game gets published to
-  // the game store and is inserted the gaming company's my games list.
+  // When a gaming company publicist publishes a game, the game gets published to
+  // the game store and is inserted to the gaming company publicist's my games list.
   const handlePublishGameSubmit = async (event) => {
     event.preventDefault();
 
     // Input data holds data for game to publish (from publish game form)
-    // and current gaming company user.
+    // and current gaming company publicist user.
     // gamingCompanyUser is used for querying purposes when adding
-    // a game to gaming company's my games and gameInputData is used for
-    // adding a game to gaming company's my games and game store.
+    // a game to gaming company publicist's my games and gameInputData is used for
+    // adding a game to gaming company publicist's my games and game store.
     const inputData = {
       gamingCompanyUser: {
         _id: currUserData._id,
@@ -38,7 +41,7 @@ const PublishGameForm = ({ loadMyGamesData }) => {
         gameImageURL: gameImageURLRef.current.value,
         gameDesc: gameDescRef.current.value,
         gamePrice: gamePriceRef.current.value,
-        publishedBy: currUserData.userName,
+        publishedBy: currUserData.gamingCompany,
       },
     };
 
@@ -51,7 +54,7 @@ const PublishGameForm = ({ loadMyGamesData }) => {
     // Send input data to /api/publishGame route and
     // return the response (as raw data) from backend after
     // adding gameInputData to gamestore collection
-    // and to the current gaming company's my games
+    // and to the current gaming company publicist's my games
     const publishGameResRawData = await fetch("/api/publishGame", {
       method: "POST",
       headers: {
@@ -69,11 +72,9 @@ const PublishGameForm = ({ loadMyGamesData }) => {
     else {
       let publishGameResData = await publishGameResRawData.json();
       console.log(publishGameResData.message);
+      alert("Your game has been been published to the store and my games");
+      navigate("/gamingCompany/myGames");
     }
-
-    // load my games and re-render list of my games after publishing
-    // a game
-    loadMyGamesData();
   };
 
   return (
@@ -133,10 +134,6 @@ const PublishGameForm = ({ loadMyGamesData }) => {
       </form>
     </div>
   );
-};
-
-PublishGameForm.propTypes = {
-  loadMyGamesData: PropTypes.func,
 };
 
 export default PublishGameForm;

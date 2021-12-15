@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import NavBarCompany from "../../components/GamingCompany/NavBarCompany.js";
 
-// Gaming company main page
+// Gaming company publicist main page
 // Nathaniel
 const GamingCompanyPage = () => {
   return (

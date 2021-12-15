@@ -3,10 +3,12 @@ import LoginPage from "./pages/Login/LoginPage.js";
 import RegisterPage from "./pages/Registration/RegisterPage.js";
 import GamingCompanyPage from "./pages/GamingCompany/GamingCompanyPage.js";
 import GamingCompanyStorePage from "./pages/GamingCompany/GamingCompanyStorePage.js";
+import PublishGamePage from "./pages/GamingCompany/PublishGamePage.js";
 import MyGamesPage from "./pages/GamingCompany/MyGamesPage.js";
 import GamerPage from "./pages/Gamer/GamerPage.js";
 import GamerStorePage from "./pages/Gamer/GamerStorePage.js";
 import GamerCartPage from "./pages/Gamer/GamerCartPage.js";
+import "./App.css";
 
 function App() {
   return (
@@ -16,7 +18,8 @@ function App() {
           <Route path="/" element={<LoginPage />}></Route>
           <Route path="/register" element={<RegisterPage />}></Route>
           <Route path="/gamingCompany" element={<GamingCompanyPage />}>
-            <Route index element={<GamingCompanyStorePage />} />
+            <Route index element={<PublishGamePage />} />
+            <Route path="store" element={<GamingCompanyStorePage />} />
             <Route path="myGames" element={<MyGamesPage />} />
           </Route>
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import StoreGamesList from "../../components/GamingCompany/StoreGamesList.js";
 import "./styles/GamingCompanyStorePage.css";
 
-// Gaming company's store page
+// Store page of all published games that gaming company publicists can view
 // Nathaniel
 const GamingCompanyStorePage = () => {
   // storeGames state holds the array of games from the store
@@ -46,7 +46,7 @@ const GamingCompanyStorePage = () => {
 
   return (
     <div>
-      <h2 className="gameStoreTitle">Game Store</h2>
+      <h1 className="gameStoreTitle">Game Store</h1>
       <StoreGamesList storeGames={storeGames}></StoreGamesList>
     </div>
   );

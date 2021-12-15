@@ -1,4 +1,4 @@
-/* Styles for NavBar for gaming company main page */
+/* Styles for NavBar for gaming company publicist main page */
 /* Nathaniel */
 
 .navBarCompany {
@@ -16,17 +16,25 @@
 }
 
 .storeNavItem {
-  font-size: 20px;
+  margin-top: 4px;
+  font-size: 18px;
   font-weight: 520;
 }
 
 .myGamesNavItem {
-  font-size: 20px;
+  margin-top: 4px;
+  font-size: 18px;
   font-weight: 520;
 }
 
-.welcomeGamingCompany {
-  margin-right: 150px;
+.publishGameNavItem {
+  margin-top: 4px;
+  font-size: 18px;
+  font-weight: 520;
+}
+
+.welcomeGamingCompanyPublicist {
+  margin-right: 300px;
   font-size: 20px;
   font-weight: 520;
 }

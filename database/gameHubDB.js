@@ -79,7 +79,7 @@ function gameHubDB() {
   };
 
   // Inserts game object to gamestore collection
-  // This function is called when a gaming company publishes a game
+  // This function is called when a gaming company publicist publishes a game
   // Nathaniel
   gameHubDB.publishGameToStore = async function (game) {
     let client;
@@ -101,8 +101,8 @@ function gameHubDB() {
     }
   };
 
-  // Add game object to the myGames array of a gaming company user
-  // This function is called when a gaming company publishes a game
+  // Add game object to the myGames array of a gaming company publicist user
+  // This function is called when a gaming company publicist publishes a game
   // Nathaniel
   gameHubDB.addGameToMyGames = async function (gamingCompanyUser, game) {
     let client;
@@ -115,7 +115,7 @@ function gameHubDB() {
       const usersCollection = db.collection("users");
       // returns the response of updating myGames field
       // (inserting game object to myGames field)
-      // of a gaming company user
+      // of a gaming company publicist user
       return await usersCollection.updateOne(
         { _id: new ObjectId(gamingCompanyUser._id) },
         { $push: { myGames: game } }
@@ -129,7 +129,7 @@ function gameHubDB() {
   };
 
   // Delete game object from gamestore collection
-  // This function is called when a gaming company deletes a game
+  // This function is called when a gaming company publicist deletes their published game
   // from their my games list.
   // Nathaniel
   gameHubDB.deleteGameFromStore = async function (game) {
@@ -159,8 +159,8 @@ function gameHubDB() {
     }
   };
 
-  // Delete game object from the myGames array of a gaming company user
-  // This function is called when a gaming company deletes a game
+  // Delete game object from the myGames array of a gaming company publicist user
+  // This function is called when a gaming company publicist deletes their published game
   // from their my games list.
   // Nathaniel
   gameHubDB.deleteGameFromMyGames = async function (gamingCompanyUser, game) {
@@ -174,7 +174,7 @@ function gameHubDB() {
       const usersCollection = db.collection("users");
       // returns the response of updating myGames field
       // (deleting game object from myGames field)
-      // of a gaming company user
+      // of a gaming company publicist user
       return await usersCollection.updateOne(
         { _id: new ObjectId(gamingCompanyUser._id) },
         { $pull: { myGames: { _id: new ObjectId(game._id) } } }

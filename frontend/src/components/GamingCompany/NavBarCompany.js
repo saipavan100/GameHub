@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import "./styles/NavBarCompany.css";
 
-// Nav bar component for gaming company main page
+// Nav bar component for gaming company publicist main page
 // Nathaniel
 const NavBarCompany = () => {
-  // Current user data (gaming company)
+  // Current user data (gaming company publicist)
   let currUserData = sessionStorage.getItem("currUser");
   currUserData = JSON.parse(currUserData);
 
@@ -14,9 +14,9 @@ const NavBarCompany = () => {
         <li className="imageNavItem">
           <img src="../../../gameIcon.png" alt="gameIconImg" />
         </li>
-        <li className="nav-item storeNavItem">
+        <li className="nav-item publishGameNavItem">
           <Link className="nav-link" to="/gamingCompany">
-            Store
+            Publish Game
           </Link>
         </li>
         <li className="nav-item myGamesNavItem">
@@ -24,8 +24,13 @@ const NavBarCompany = () => {
             My Games
           </Link>
         </li>
+        <li className="nav-item storeNavItem">
+          <Link className="nav-link" to="/gamingCompany/store">
+            Store
+          </Link>
+        </li>
       </ul>
-      <div className="welcomeGamingCompany">
+      <div className="welcomeGamingCompanyPublicist">
         Welcome {currUserData.userName}
       </div>
       <Link className="btn btn-primary logoutButton" to="/">

@@ -8,21 +8,21 @@
 }
 
 .welcomeTitle1 {
-  font-family: "Roboto", sans-serif;
+  /*font-family: "Roboto", sans-serif;*/
   text-align: center;
   margin-top: 10%;
   color: #dcdcdc;
 }
 
 .welcomeTitle2 {
-  font-family: "Roboto", sans-serif;
+  /*font-family: "Roboto", sans-serif;*/
   text-align: center;
   color: #dcdcdc;
   font-size: 18px;
 }
 
 .loginBox {
-  font-family: "Roboto", sans-serif;
+  /*font-family: "Roboto", sans-serif;*/
   margin-top: 1%;
   margin-left: 33.5%;
   padding: 20px;
@@ -111,7 +111,7 @@ input {
 }
 
 .loginTitle {
-  font-family: "Roboto", sans-serif;
+  /*font-family: "Roboto", sans-serif;*/
   text-align: center;
   color: #dcdcdc;
   font-size: 25px;

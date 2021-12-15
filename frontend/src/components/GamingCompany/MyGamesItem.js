@@ -7,21 +7,21 @@ import "./styles/MyGamesItem.css";
 // from MyGamesList component.
 // Nathaniel
 const MyGamesItem = ({ game, loadMyGamesData }) => {
-  // Current user data (gaming company)
+  // Current user data (gaming company publicist)
   let currUserData = sessionStorage.getItem("currUser");
   currUserData = JSON.parse(currUserData);
 
-  // Function for handling deleting a gaming company's game.
-  // Deleting a gaming company's game will also remove the game
+  // Function for handling deleting a gaming company publicist's published game.
+  // Deleting a gaming company publicist's published game will also remove the game
   // from the game store.
   const handleDeleteMyGame = async (event) => {
     event.preventDefault();
 
     // Input data holds data for game to delete
-    // and current gaming company user.
+    // and current gaming company publicist user.
     // gamingCompanyUser is used for querying purposes when deleting
-    // a game from gaming company's my games and gameInputData is used for
-    // adding a game to gaming company's my games and game store.
+    // a game from gaming company publicist's my games and gameInputData is used for
+    // removing a game from gaming company publicist's my games and game store.
     const inputData = {
       gamingCompanyUser: {
         _id: currUserData._id,
@@ -34,7 +34,7 @@ const MyGamesItem = ({ game, loadMyGamesData }) => {
     // Send input data to /api/deleteMyGame route and
     // return the response (as raw data) from backend after
     // deleting gameInputData from gamestore collection
-    // and from the current gaming company's my games
+    // and from the current gaming company publicist's my games
     const delGameResRawData = await fetch("/api/deleteMyGame", {
       method: "POST",
       headers: {
@@ -52,6 +52,7 @@ const MyGamesItem = ({ game, loadMyGamesData }) => {
     else {
       let delGameResData = await delGameResRawData.json();
       console.log(delGameResData.message);
+      alert("You removed your published game!");
     }
 
     // load my games and re-render list of my games after deleting

@@ -35,7 +35,7 @@ router.post("/register", async function (req, res) {
         user.cart = [];
       }
 
-      if (user.role === "Gaming company") {
+      if (user.role === "Gaming company publicist") {
         user.myGames = [];
       }
 
@@ -62,22 +62,22 @@ router.get("/getAllStoreGames", async function (req, res) {
   }
 });
 
-/// Routes for gaming company (Nathaniel) ///
+/// Routes for gaming company publicist (Nathaniel) ///
 
 // Publish game route performs two operations:
 // 1. Inserts game object to gamestore collection
-// 2. Inserts game object to myGames array for a gaming company user
+// 2. Inserts game object to myGames array for a gaming company publicist user
 router.post("/publishGame", async function (req, res) {
   // Game data (request) from frontend
   const game = req.body.gameInputData;
-  // Gaming company user data (request) from frontend
+  // Gaming company publicist user data (request) from frontend
   const gamingCompanyUser = req.body.gamingCompanyUser;
 
   try {
     // Response of publishing a game to gamestore collection
     const publishGameRes = await gameHubDB.publishGameToStore(game);
     console.log("Published game to game-hub-db ", publishGameRes);
-    // Response of adding a game to my games for a gaming company user
+    // Response of adding a game to my games for a gaming company publicist user
     const addGameToMyGamesRes = await gameHubDB.addGameToMyGames(
       gamingCompanyUser,
       game
@@ -92,18 +92,18 @@ router.post("/publishGame", async function (req, res) {
   }
 });
 
-// Route for getting my games for a gaming company user
+// Route for getting my games for a gaming company publicist user
 router.post("/getMyGames", async function (req, res) {
-  // Gaming company user data (request) from frontend
+  // Gaming company publicist user data (request) from frontend
   const gamingCompanyUser = req.body;
   try {
-    // Response of finding a user (gaming company user) from database
+    // Response of finding a user (gaming company publicist user) from database
     const gamingCompanyUserRes = await gameHubDB.findUser(gamingCompanyUser);
     console.log(
       "Got user (gaming company) from game-hub-db ",
       gamingCompanyUserRes
     );
-    // Get my games for a gaming company user
+    // Get my games for a gaming company publicist user
     console.log(
       "Got my games for gaming company ",
       gamingCompanyUserRes[0].myGames
@@ -117,19 +117,19 @@ router.post("/getMyGames", async function (req, res) {
 
 // Delete my game route performs two operations:
 // 1. Deletes game object from gamestore collection
-// 2. Deletes game object from myGames array for a gaming company user
+// 2. Deletes game object from myGames array for a gaming company publicist user
 router.post("/deleteMyGame", async function (req, res) {
   // Game data (request) from frontend
   const game = req.body.gameInputData;
   //console.log(game);
-  // Gaming company user data (request) from frontend
+  // Gaming company publicist user data (request) from frontend
   const gamingCompanyUser = req.body.gamingCompanyUser;
 
   try {
     // Response of deleting a game from gamestore collection
     const delGameRes = await gameHubDB.deleteGameFromStore(game);
     console.log("Deleted game to game-hub-db ", delGameRes);
-    // Response of deleting a game from my games for a gaming company user
+    // Response of deleting a game from my games for a gaming company publicist user
     const delGameFromMyGamesRes = await gameHubDB.deleteGameFromMyGames(
       gamingCompanyUser,
       game
@@ -144,7 +144,7 @@ router.post("/deleteMyGame", async function (req, res) {
   }
 });
 
-/// Routes for gaming company (Nathaniel) ///
+/// Routes for gaming company publicist (Nathaniel) ///
 
 ////////////////////////////////////////////////////////////////////////////////
 

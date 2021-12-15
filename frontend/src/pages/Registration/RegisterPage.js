@@ -11,14 +11,22 @@ const RegisterPage = () => {
   const userNameRef = useRef();
   const passwordRef = useRef();
   const roleRef = useRef();
+  const gamingCompanyRef = useRef();
 
   const registerHandler = async (event) => {
     event.preventDefault();
+
     let userInputData = {
       userName: userNameRef.current.value,
       password: passwordRef.current.value,
       role: roleRef.current.value,
     };
+
+    // If the role is gaming company publicist, we add
+    // the gaming company they work for
+    if (roleRef.current.value === "Gaming company publicist") {
+      userInputData.gamingCompany = gamingCompanyRef.current.value;
+    }
 
     const newUser = await fetch("/api/register", {
       method: "POST",
@@ -74,8 +82,17 @@ const RegisterPage = () => {
               </label>
               <select className="form-select" ref={roleRef} id="roleSelectId1">
                 <option>Gamer</option>
-                <option>Gaming company</option>
+                <option>Gaming company publicist</option>
               </select>
+            </div>
+            <div className="gamingCompany">
+              <label className="label-of-form">Gaming company you work for (only applicable for publicists)</label>
+              <input
+                className="form-control"
+                type="text"
+                ref={gamingCompanyRef}
+                placeholder="Gaming company name"
+              ></input>
             </div>
             <hr />
             <div className="d-grid gap-2 mx-auto center signUpContainer">

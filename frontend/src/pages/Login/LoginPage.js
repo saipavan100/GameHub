@@ -5,7 +5,7 @@ import "./styles/LoginPage.css";
 // Login page
 // Nathaniel
 const LoginPage = () => {
-  // Used for navigating to Gamer page or Gaming company page
+  // Used for navigating to Gamer page or Gaming company publicist page
   let navigate = useNavigate();
 
   // References to inputs from login form
@@ -14,7 +14,7 @@ const LoginPage = () => {
   const roleRef = useRef();
 
   // Handles setting the state of login error when users
-  // (gamer or gaming company) log in
+  // (gamer or gaming company publicist) log in
   let [loginError, setLoginError] = useState("");
 
   // Function for handling user login
@@ -73,6 +73,12 @@ const LoginPage = () => {
           role: usersData[0].role,
         };
 
+        // If current user role is a gaming company publicist
+        // include the company they work for
+        if (usersData[0].role === "Gaming company publicist") {
+          currUser.gamingCompany = usersData[0].gamingCompany;
+        }
+
         sessionStorage.setItem("currUser", JSON.stringify(currUser));
 
         // If user role is gamer
@@ -82,9 +88,9 @@ const LoginPage = () => {
           navigate("/gamer");
         }
 
-        // If user role is gaming company
-        if (usersData[0].role === "Gaming company") {
-          // Navigate to Gaming company page
+        // If user role is gaming company publicist
+        if (usersData[0].role === "Gaming company publicist") {
+          // Navigate to Gaming company page (for gaming company publicist)
           navigate("/gamingCompany");
         }
       }
@@ -132,7 +138,7 @@ const LoginPage = () => {
                 id="roleSelectId"
               >
                 <option>Gamer</option>
-                <option>Gaming company</option>
+                <option>Gaming company publicist</option>
               </select>
             </div>
             <hr />

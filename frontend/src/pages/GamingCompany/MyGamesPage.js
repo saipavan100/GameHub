@@ -1,26 +1,25 @@
 import { useState, useEffect } from "react";
 import MyGamesList from "../../components/GamingCompany/MyGamesList.js";
-import PublishGameForm from "../../components/GamingCompany/PublishGameForm.js";
 import "./styles/MyGamesPage.css";
 
-// Gaming company's personal page (MyGames page)
+// Gaming company publicist's published games page
 // Nathaniel
 const MyGamesPage = () => {
-  // Current user data (gaming company)
+  // Current user data (gaming company publicist)
   let currUserData = sessionStorage.getItem("currUser");
   currUserData = JSON.parse(currUserData);
 
-  // myGames state holds the array of my games for a gaming company
+  // myGames state holds the array of my games for a gaming company publicist
   // setMyGames will set the state of myGames
   let [myGames, setMyGames] = useState([]);
 
-  // Function for loading my games data for a gaming company user
+  // Function for loading my games data for a gaming company publicist user
   const loadMyGamesData = async () => {
     console.log("Getting my games ...");
 
-    // Send gaming company user data to /api/getMyGames route and
+    // Send gaming company publicist user data to /api/getMyGames route and
     // return the response (as raw data).
-    // The response we get is the gaming company's games
+    // The response we get is the gaming company publicists's published games
     const gamingCompanyUser = {
       userName: currUserData.userName,
       role: currUserData.role,
@@ -43,7 +42,7 @@ const MyGamesPage = () => {
     else {
       let myGamesResData = await myGamesResRawData.json();
 
-      // An array of the current gaming company's games
+      // An array of the current gaming company publicist's published games
       let myGamesData = myGamesResData.myGames;
       // setMyGames will trigger a re render of the MyGamesList
       // component
@@ -62,7 +61,6 @@ const MyGamesPage = () => {
 
   return (
     <div>
-      <PublishGameForm loadMyGamesData={loadMyGamesData}></PublishGameForm>
       <h2 className="myGamesTitle">My Games</h2>
       <MyGamesList
         myGames={myGames}
