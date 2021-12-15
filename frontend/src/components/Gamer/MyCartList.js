@@ -16,7 +16,15 @@ const MyCartList = ({ cart, getCartItems }) => {
     ));
   };
 
-  return <div className="cartItems col-md-4 col-sm-6">{cartList()}</div>;
+  return (
+    <div className="gamerCartConatiner">
+      <h1 className="gamerCartListTitle">Gamer Cart</h1>
+      <div className="gamerCartListDescription">
+        You can check your cart and delete items that you do not want to buy.
+      </div>
+      <div className="cartItems">{cartList()}</div>
+    </div>
+  );
 };
 
 MyCartList.propTypes = {
