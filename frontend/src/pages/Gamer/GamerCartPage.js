@@ -39,7 +39,7 @@ const GamerCartPage = () => {
     <div id="gamerCartContainer">
       <NavBarGamer />
       <MyCartList cart={cartItems} getCartItems={getCartItems} />
-      <div className="footer">
+      <div className="footer gamerCartFooter">
         <div className="center">Copyright 2021</div>
         <div className="center">Designed by Nathaniel & Yuanyuan</div>
       </div>
