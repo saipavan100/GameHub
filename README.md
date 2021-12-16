@@ -1,7 +1,8 @@
 # GameHub
 
-This repository is for Project 3 and Final Project for the CS5610 Web Development Course (updated README for project 4).
-You can check the code for the Final Project in the project4 branch. 
+This repository is for project 3 and the final project for the CS5610 Web Development Course (updated README for final project).
+You can check the code for the final project in the project4 branch.
+Note: The code for the final project from the project4 branch has been merged into the main branch. 
 
 ## Project Objective
 
