@@ -104,63 +104,77 @@ const LoginPage = () => {
         <h2 className="welcomeTitle2">
           Bringing gamers and gaming companies together
         </h2>
-        <div className="col-sm-4 box border loginBox">
-          <form id="loginForm" onSubmit={handleLoginSubmit}>
-            <div className="loginTitle">Login</div>
-            <div className="loginError">{loginError}</div>
-            <div className="userNameSection">
-              <label className="form-label">Username</label>
-              <input
-                className="form-control"
-                type="text"
-                ref={userNameRef}
-                placeholder="Username"
-                required
-              />
+        <div className="row">
+          <div className="col-4 loginBox">
+            <form id="loginForm" onSubmit={handleLoginSubmit}>
+              <div className="loginTitle">Login</div>
+              <div className="loginError">{loginError}</div>
+              <div className="userNameSection">
+                <label className="form-label">Username</label>
+                <input
+                  className="form-control"
+                  type="text"
+                  ref={userNameRef}
+                  placeholder="Username"
+                  required
+                />
+              </div>
+              <div className="passwordSection">
+                <label className="form-label">Password</label>
+                <input
+                  className="form-control"
+                  type="password"
+                  ref={passwordRef}
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <div className="roleSection">
+                <label htmlFor="roleSelectId">Select a role</label>
+                <select
+                  defaultValue={"Gamer"}
+                  className="form-select"
+                  type="form-control"
+                  ref={roleRef}
+                  id="roleSelectId"
+                >
+                  <option>Gamer</option>
+                  <option>Gaming company publicist</option>
+                </select>
+              </div>
+              <hr />
+              <div className="loginSection">
+                <button type="submit" className="btn signInButton">
+                  Sign in
+                </button>
+              </div>
+            </form>
+            <hr className="loginHR" />
+            <div className="navToRegisterSection">
+              <Link to="/register">
+                <button className="btn register">
+                  Register if you don't have an account
+                </button>
+              </Link>
             </div>
-            <div className="passwordSection">
-              <label className="form-label">Password</label>
-              <input
-                className="form-control"
-                type="password"
-                ref={passwordRef}
-                placeholder="Password"
-                required
-              />
+          </div>
+          <div className="col-4 loginInfoBox">
+            <div>
+              GameHub serves as a platform where gamers can add their favorite
+              video games to their cart for purchase and gaming company
+              publicists can publish games on behalf of the gaming company they
+              work for.
             </div>
-            <div className="roleSection">
-              <label htmlFor="roleSelectId">Select a role</label>
-              <select
-                defaultValue={"Gamer"}
-                className="form-select"
-                type="form-control"
-                ref={roleRef}
-                id="roleSelectId"
-              >
-                <option>Gamer</option>
-                <option>Gaming company publicist</option>
-              </select>
+            <div>
+              Login as a gamer or gaming company publicist if you have an
+              account with us.
             </div>
-            <hr />
-            <div className="d-grid gap-2 mx-auto center loginSection">
-              <button type="submit" className="btn btn-primary signInButton">
-                Sign in
-              </button>
-            </div>
-          </form>
-          <hr className="loginHR" />
-        </div>
-        <div className="center navToRegisterSection">
-          <Link to="/register">
-            <button className="btn btn-primary register">
-              Register if you don't have an account
-            </button>
-          </Link>
+          </div>
         </div>
       </div>
-      <div className="footer">
-        <div className="center footerSection1">Copyright 2021</div>
-        <div className="center footerSection2">
+      <div className="footerLogin">
+        <div className="footerLoginSection1">Copyright 2021</div>
+        <div className="footerLoginSection2">
           Designed by Nathaniel & Yuanyuan
         </div>
       </div>

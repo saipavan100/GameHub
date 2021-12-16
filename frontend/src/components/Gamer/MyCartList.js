@@ -18,7 +18,7 @@ const MyCartList = ({ cart, getCartItems }) => {
 
   return (
     <div className="gamerCartConatiner">
-      <h1 className="gamerCartListTitle">Gamer Cart</h1>
+      <h1 className="gamerCartListTitle">My Cart</h1>
       <div className="gamerCartListDescription">
         You can check your cart and delete items that you do not want to buy.
       </div>

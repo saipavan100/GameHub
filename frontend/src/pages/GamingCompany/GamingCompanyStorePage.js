@@ -45,9 +45,24 @@ const GamingCompanyStorePage = () => {
   }, []);
 
   return (
-    <div>
+    <div id="companyStoreContainer">
       <h1 className="gameStoreTitle">Game Store</h1>
+      <div className="storeGamesInfo1">
+        A list of games published by various gaming companies.
+      </div>
+      <div className="storeGamesInfo2">
+        Your published games on behalf of the gaming company you work for appears in
+        the store.
+      </div>
+      <div className="storeGamesInfo3">
+        Whenever you delete a published game, that published game does not
+        appear in the store.
+      </div>
       <StoreGamesList storeGames={storeGames}></StoreGamesList>
+      <div className="footer storeGamesFooter">
+        <div className="storeGamesFooter1">Copyright 2021</div>
+        <div className="storeGamesFooter2">Designed by Nathaniel & Yuanyuan</div>
+      </div>
     </div>
   );
 };

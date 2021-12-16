@@ -17,7 +17,9 @@ const StoreGamesItem = ({ game }) => {
         <div className="storeGamesItemTitle">{game.gameTitle}</div>
         <div className="storeGamesItemPublishedBy">{game.publishedBy}</div>
       </div>
-      <div className="storeGamesItemDescSection">{game.gameDesc}</div>
+      <div className="storeGamesItemDescSection">
+        Description: {game.gameDesc}
+      </div>
       <div className="storeGamesItemPriceSection">${game.gamePrice}</div>
     </div>
   );

@@ -1,10 +1,49 @@
 /* Styles for PublishGame page for a gaming company publicist user */
 /* Nathaniel */
 
-/*.myGamesTitle {
+#publishGameContainer {
+  background-image: url(../../../images/background.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.publishGameTitle {
   padding-top: 20px;
+  margin-left: 20%;
+}
+
+.publishGameInfo1 {
+  margin-left: 20%;
+  font-size: 18px;
+}
+
+.publishGameInfo2 {
+  margin-left: 20%;
+  font-size: 18px;
+}
+
+.publishGameInfo3 {
+  margin-left: 20%;
+  font-size: 18px;
+}
+
+.publishGameInfo4 {
+  margin-left: 20%;
+  padding-bottom: 8px;
+  font-size: 18px;
+}
+
+.publishGameFooter {
+  margin-top: 10%;
+  color: #fff;
+}
+
+.publishGameFooter1 {
+  margin-top: 1%;
   text-align: center;
-  font-weight: 510;
-  font-size: 30px;
-  padding-bottom: 20px;
-}*/
+}
+
+.publishGameFooter2 {
+  text-align: center;
+}

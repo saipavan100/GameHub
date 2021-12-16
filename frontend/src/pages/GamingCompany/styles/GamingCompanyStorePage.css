@@ -1,11 +1,43 @@
 /* Styles for store page for gaming company publicist */
 /* Nathaniel */
 
+#companyStoreContainer {
+  background-image: url(../../../images/background.jpg);
+  background-repeat: repeat;
+  color: #fff;
+}
+
 .gameStoreTitle {
   padding-top: 20px;
-  text-align: center;
-  font-weight: 510;
-  font-size: 30px;
-  padding-bottom: 20px;
+  margin-left: 15%;
+}
+
+.storeGamesInfo1 {
+  font-size: 18px;
+  margin-left: 15%;
+}
+
+.storeGamesInfo2 {
+  font-size: 18px;
+  margin-left: 15%;
+}
+
+.storeGamesInfo3 {
+  font-size: 18px;
+  margin-left: 15%;
   margin-bottom: 20px;
+}
+
+.storeGamesFooter {
+  margin-top: 30%;
+  color: #fff;
+}
+
+.storeGamesFooter1 {
+  margin-top: 1%;
+  text-align: center;
+}
+
+.storeGamesFooter2 {
+  text-align: center;
 }

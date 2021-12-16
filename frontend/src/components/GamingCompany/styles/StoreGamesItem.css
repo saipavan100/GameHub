@@ -5,15 +5,19 @@
   border-bottom: 2px solid gainsboro;
   border-top: 2px solid gainsboro;
   padding: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.storeGamesItemSection1 {
+  width: 200px;
+}
+
 .storeGamesItemImage img {
   height: 180px;
-  width: 180px;
+  width: 100%;
 }
 
 .storeGamesItemTitle {

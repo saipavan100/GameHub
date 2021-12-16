@@ -61,23 +61,23 @@ const MyGamesItem = ({ game, loadMyGamesData }) => {
   };
 
   return (
-    <div>
-      <div className="myGamesItemContainer">
-        {/*A container for holding the game image, title, and published by */}
-        <div className="myGamesItemSection1">
-          <div className="myGamesItemImage">
-            <img src={game.gameImageURL} alt="myGameImage" />
-          </div>
-          <div className="myGamesItemTitle">{game.gameTitle}</div>
-          <div className="myGamesItemPublishedBy">{game.publishedBy}</div>
+    <div className="myGamesItemContainer">
+      {/*A container for holding the game image, title, and published by */}
+      <div className="myGamesItemSection1">
+        <div className="myGamesItemImage">
+          <img src={game.gameImageURL} alt="myGameImage" />
         </div>
-        <div className="myGamesItemDescSection">{game.gameDesc}</div>
-        <div className="myGameItemPriceSection">${game.gamePrice}</div>
-        <div className="deleteMyGameButtonSection">
-          <button onClick={handleDeleteMyGame} className="btn btn-danger">
-            X
-          </button>
-        </div>
+        <div className="myGamesItemTitle">{game.gameTitle}</div>
+        <div className="myGamesItemPublishedBy">{game.publishedBy}</div>
+      </div>
+      <div className="myGamesItemDescSection">
+        Description: {game.gameDesc}
+      </div>
+      <div className="myGameItemPriceSection">${game.gamePrice}</div>
+      <div className="deleteMyGameButtonSection">
+        <button onClick={handleDeleteMyGame} className="btn btn-danger">
+          Delete game
+        </button>
       </div>
     </div>
   );

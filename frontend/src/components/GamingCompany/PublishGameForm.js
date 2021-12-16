@@ -80,54 +80,49 @@ const PublishGameForm = () => {
   return (
     <div className="publishGameFormContainer">
       <form id="publishGameForm" onSubmit={handlePublishGameSubmit}>
-        <div className="publishGameFormTitle">Publish your game</div>
-        <div className="publishGameFormSection1">
-          <div className="gameTitle">
-            <label className="form-label">Game Title</label>
-            <input
-              className="form-control"
-              type="text"
-              ref={gameTitleRef}
-              placeholder="Enter game title here"
-              required
-            />
-          </div>
-          <div className="gameImage">
-            <label className="form-label">Game Image</label>
-            <input
-              className="form-control"
-              type="text"
-              ref={gameImageURLRef}
-              placeholder="Enter game image URL here"
-              required
-            />
-          </div>
+        <div className="gameTitle">
+          <label className="form-label">Game Title</label>
+          <input
+            className="form-control"
+            type="text"
+            ref={gameTitleRef}
+            placeholder="Enter game title here"
+            required
+          />
         </div>
-        <div className="publishGameFormSection2">
-          <div className="gameDescription">
-            <label className="form-label">Game Description</label>
-            <textarea
-              className="form-control"
-              cols="25"
-              rows="2"
-              ref={gameDescRef}
-              placeholder="Enter game description here"
-              required
-            ></textarea>
-          </div>
-          <div className="gamePrice">
-            <label className="form-label">Game Price</label>
-            <input
-              className="form-control"
-              type="text"
-              ref={gamePriceRef}
-              placeholder="Enter game price here"
-              required
-            />
-          </div>
+        <div className="gameImage">
+          <label className="form-label">Game Image</label>
+          <input
+            className="form-control"
+            type="text"
+            ref={gameImageURLRef}
+            placeholder="Enter game image URL here"
+            required
+          />
+        </div>
+        <div className="gamePrice">
+          <label className="form-label">Game Price</label>
+          <input
+            className="form-control"
+            type="text"
+            ref={gamePriceRef}
+            placeholder="Enter game price here"
+            required
+          />
+        </div>
+        <div className="gameDescription">
+          <label className="form-label">Game Description</label>
+          <textarea
+            className="form-control"
+            cols="25"
+            rows="2"
+            ref={gameDescRef}
+            placeholder="Enter game description here"
+            required
+          ></textarea>
         </div>
         <div className="publishGameSection">
-          <button type="submit" className="btn btn-success">
+          <button type="submit" className="btn publishButton">
             Publish game
           </button>
         </div>

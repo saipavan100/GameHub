@@ -11,11 +11,11 @@ const NavBarGamer = () => {
                 <li className="imageNavItem">
                     <img src="../../../gameIcon.png" alt="gameIconImg" />
                 </li>
-                <li className="nav-item navItemCart">
-                    <Link className="nav-link" to="/gamer/myCart">Cart</Link>
-                </li>
                 <li className="nav-item navItemStore">
                     <Link className="nav-link" to="/gamer">Store</Link>
+                </li>
+                <li className="nav-item navItemCart">
+                    <Link className="nav-link" to="/gamer/myCart">Cart</Link>
                 </li>
             </ul>
             <div className="welcomeGamer">

@@ -1,10 +1,44 @@
 /* Styles for MyGames page for a gaming company publicist user */
 /* Nathaniel */
 
+#myGamesContainer {
+  background-image: url(../../../images/background.jpg);
+  background-repeat: repeat;
+  /*background-size: cover;*/
+  color: #fff;
+}
+
 .myGamesTitle {
   padding-top: 20px;
+  margin-left: 15%;
+}
+
+.myGamesInfo1 {
+  font-size: 18px;
+  margin-left: 15%;
+}
+
+.myGamesInfo2 {
+  font-size: 18px;
+  margin-left: 15%;
+}
+
+.myGamesInfo3 {
+  font-size: 18px;
+  margin-left: 15%;
+  margin-bottom: 20px;
+}
+
+.myGamesFooter {
+  margin-top: 30%;
+  color: #fff;
+}
+
+.myGamesFooter1 {
+  margin-top: 1%;
   text-align: center;
-  font-weight: 510;
-  font-size: 30px;
-  padding-bottom: 20px;
+}
+
+.myGamesFooter2 {
+  text-align: center;
 }

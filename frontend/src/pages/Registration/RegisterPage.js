@@ -52,68 +52,88 @@ const RegisterPage = () => {
     <div id="registerContainer">
       <div className="row">
         <h1 className="title">Welcome to GameHub</h1>
-        <h2 className="title2">Start your Game Journey</h2>
-        <div className="col-sm-4 box border registerBox">
-          <form id="registerForm" onSubmit={registerHandler}>
-            <div className="registerTitle">Register</div>
-            <div className="userName">
-              <label className="label-of-form">Username</label>
-              <input
-                className="form-control"
-                type="text"
-                ref={userNameRef}
-                placeholder="Username"
-                required
-              ></input>
+        <h2 className="title2">Start your GameHub journey</h2>
+        <div className="row">
+          <div className="col-4 registerBox">
+            <form id="registerForm" onSubmit={registerHandler}>
+              <div className="registerTitle">Register</div>
+              <div className="userName">
+                <label className="label-of-form">Username</label>
+                <input
+                  className="form-control"
+                  type="text"
+                  ref={userNameRef}
+                  placeholder="Username"
+                  required
+                ></input>
+              </div>
+              <div className="password">
+                <label className="label-of-form">Password</label>
+                <input
+                  className="form-control"
+                  type="password"
+                  ref={passwordRef}
+                  placeholder="Password"
+                  required
+                ></input>
+              </div>
+              <div className="selectRole">
+                <label htmlFor="roleSelectId1" className="selectRole">
+                  Select a role
+                </label>
+                <select
+                  className="form-select"
+                  ref={roleRef}
+                  id="roleSelectId1"
+                >
+                  <option>Gamer</option>
+                  <option>Gaming company publicist</option>
+                </select>
+              </div>
+              <div className="gamingCompany">
+                <label className="label-of-form">
+                  Gaming company you work for (only applicable for publicists)
+                </label>
+                <input
+                  className="form-control"
+                  type="text"
+                  ref={gamingCompanyRef}
+                  placeholder="Gaming company name"
+                ></input>
+              </div>
+              <hr />
+              <div className="signUpContainer">
+                <button type="submit" className="btn signUpButton">
+                  Sign up
+                </button>
+              </div>
+            </form>
+            <hr className="registerHR" />
+            <div className="loginContainer">
+              <Link to="/">
+                <button className="btn login">
+                  Login if you have an account
+                </button>
+              </Link>
             </div>
-            <div className="password">
-              <label className="label-of-form">Password</label>
-              <input
-                className="form-control"
-                type="password"
-                ref={passwordRef}
-                placeholder="Password"
-                required
-              ></input>
+          </div>
+          <div className="col-4 registerInfoBox">
+            <div>
+              Register as a gamer or gaming company publicist if you don't have
+              an account with us.
             </div>
-            <div className="selectRole">
-              <label htmlFor="roleSelectId1" className="selectRole">
-                Select a role
-              </label>
-              <select className="form-select" ref={roleRef} id="roleSelectId1">
-                <option>Gamer</option>
-                <option>Gaming company publicist</option>
-              </select>
+            <div>
+              When registering as a gaming company publicist you should input
+              the gaming company you work for. The games you publish as a gaming
+              company publicist will be published as the gaming company you work
+              for.
             </div>
-            <div className="gamingCompany">
-              <label className="label-of-form">Gaming company you work for (only applicable for publicists)</label>
-              <input
-                className="form-control"
-                type="text"
-                ref={gamingCompanyRef}
-                placeholder="Gaming company name"
-              ></input>
-            </div>
-            <hr />
-            <div className="d-grid gap-2 mx-auto center signUpContainer">
-              <button type="submit" className="btn btn-primary signUpButton">
-                Sign up
-              </button>
-            </div>
-          </form>
-          <hr className="registerHR" />
-        </div>
-        <div className="center loginContainer">
-          <Link to="/">
-            <button className="btn btn-primary login">
-              Login if you have an account
-            </button>
-          </Link>
+          </div>
         </div>
       </div>
-      <div className="footer">
-        <div className="center footerSection1">Copyright 2021</div>
-        <div className="center footerSection2">
+      <div className="footerRegister">
+        <div className="footerRegisterSection1">Copyright 2021</div>
+        <div className="footerRegisterSection2">
           Designed by Nathaniel & Yuanyuan
         </div>
       </div>

@@ -2,50 +2,60 @@
 /* Nathaniel */
 
 .publishGameFormContainer {
-  padding-top: 10px;
-  width: 40%;
-  margin-left: 30%;
+  border-radius: 3px;
+  background-color: #757575;
+  margin-left: 20%;
+  margin-right: 20%;
+  color: #fff;
+  padding: 20px;
 }
 
-#publishGameForm {
-  border: 2px solid gainsboro;
+.gameTitle {
+  padding-bottom: 15px;
 }
 
-.publishGameFormTitle {
-  font-size: 25px;
-  text-align: center;
-  padding-bottom: 10px;
-}
-
-.publishGameFormSection1 {
-  display: flex;
-  padding-bottom: 10px;
-  padding-left: 30px;
+.gameTitle label {
+  margin-bottom: 0.3rem;
 }
 
 .gameImage {
-  margin-left: 85px;
+  padding-bottom: 15px;
 }
 
-.publishGameFormSection2 {
-  display: flex;
-  padding-bottom: 10px;
-  padding-left: 30px;
+.gameImage label {
+  margin-bottom: 0.3rem;
+}
+
+.gameDescription {
+  padding-bottom: 15px;
+}
+
+.gameDescription label {
+  margin-bottom: 0.3rem;
 }
 
 .gamePrice {
-  margin-left: 25px;
+  padding-bottom: 15px;
+}
+
+.gamePrice label {
+  margin-bottom: 0.3rem;
 }
 
 .publishGameSection {
   text-align: center;
-  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 8px;
 }
 
-/*.myGamesTitle {
-  padding-top: 20px;
-  text-align: center;
-  font-weight: 510;
-  font-size: 30px;
-  padding-bottom: 20px;
-}*/
+.publishButton {
+  background-color: #77c2ae;
+  border-radius: 0.12em;
+  color: #fff;
+  width: 150px;
+}
+
+.publishButton:hover {
+  color: #fff;
+  background-color: #68ab99;
+}

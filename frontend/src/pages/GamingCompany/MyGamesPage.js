@@ -60,12 +60,27 @@ const MyGamesPage = () => {
   }, []);
 
   return (
-    <div>
-      <h2 className="myGamesTitle">My Games</h2>
+    <div id="myGamesContainer">
+      <h1 className="myGamesTitle">My Games</h1>
+      <div className="myGamesInfo1">
+        A list of games that you published on behalf of the gaming company you
+        work for.
+      </div>
+      <div className="myGamesInfo2">
+        The gaming company you work for is {currUserData.gamingCompany}.
+      </div>
+      <div className="myGamesInfo3">
+        From your list of published games you can delete a game you published
+        for the gaming company you work for.
+      </div>
       <MyGamesList
         myGames={myGames}
         loadMyGamesData={loadMyGamesData}
       ></MyGamesList>
+      <div className="footer myGamesFooter">
+        <div className="myGamesFooter1">Copyright 2021</div>
+        <div className="myGamesFooter2">Designed by Nathaniel & Yuanyuan</div>
+      </div>
     </div>
   );
 };
