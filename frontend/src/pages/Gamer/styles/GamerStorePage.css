@@ -6,5 +6,11 @@
 }
 
 .storeFooter {
+  margin-top: 30%;
+  color: white;
   text-align: center;
+}
+
+.storeFooter div {
+  font-family: "Raleway", sans-serif;
 }

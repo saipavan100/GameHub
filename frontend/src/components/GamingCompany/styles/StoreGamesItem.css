@@ -2,8 +2,9 @@
 /* Nathaniel */
 
 .storeGamesItemContainer {
-  border-bottom: 2px solid gainsboro;
-  border-top: 2px solid gainsboro;
+  background-color: #757575;
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
   padding: 15px;
   margin-bottom: 30px;
   display: flex;

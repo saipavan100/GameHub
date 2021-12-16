@@ -33,7 +33,7 @@ const NavBarCompany = () => {
       <div className="welcomeGamingCompanyPublicist">
         Welcome {currUserData.userName}
       </div>
-      <Link className="btn btn-primary logoutButton" to="/">
+      <Link className="btn logoutButtonCompany" to="/">
         Logout
       </Link>
     </nav>

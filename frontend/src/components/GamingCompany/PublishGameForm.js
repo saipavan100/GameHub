@@ -72,7 +72,6 @@ const PublishGameForm = () => {
     else {
       let publishGameResData = await publishGameResRawData.json();
       console.log(publishGameResData.message);
-      alert("Your game has been been published to the store and my games");
       navigate("/gamingCompany/myGames");
     }
   };

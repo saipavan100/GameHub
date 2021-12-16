@@ -4,29 +4,32 @@
 #myGamesContainer {
   background-image: url(../../../images/background.jpg);
   background-repeat: repeat;
-  /*background-size: cover;*/
   color: #fff;
 }
 
 .myGamesTitle {
   padding-top: 20px;
   margin-left: 15%;
+  font-family: "Raleway", sans-serif;
 }
 
 .myGamesInfo1 {
   font-size: 18px;
   margin-left: 15%;
+  font-family: "Raleway", sans-serif;
 }
 
 .myGamesInfo2 {
   font-size: 18px;
   margin-left: 15%;
+  font-family: "Raleway", sans-serif;
 }
 
 .myGamesInfo3 {
   font-size: 18px;
   margin-left: 15%;
   margin-bottom: 20px;
+  font-family: "Raleway", sans-serif;
 }
 
 .myGamesFooter {
@@ -37,8 +40,10 @@
 .myGamesFooter1 {
   margin-top: 1%;
   text-align: center;
+  font-family: "Raleway", sans-serif;
 }
 
 .myGamesFooter2 {
   text-align: center;
+  font-family: "Raleway", sans-serif;
 }

@@ -27,7 +27,7 @@ const MyCartItem = ({ game, getCartItems }) => {
             console.log("Response status ", deleteHandler.status);
         } else {
             let deleteItem = await deleteHandler.json();
-            alert("You have removed the item successfully!");
+            console.log("Successfully delete", deleteItem);
         }
         getCartItems();
     };
@@ -38,11 +38,16 @@ const MyCartItem = ({ game, getCartItems }) => {
                     <img src={game.gameImageURL} alt="cartGameImg" />
                 </div>
                 <div className="gamerCartItemTitle">{game.gameTitle}</div>
-                <div className="gamerCartItemPublishedBy">{game.publishedBy}</div>
+                <div className="gamerCartItemPublishedBy">
+                    {game.publishedBy}
+                </div>
             </div>
-            <div className="gamerCartItemPrice">{game.gamePrice}</div>
+            <div className="gamerCartItemPrice">${game.gamePrice}</div>
             <div className="gamerCartItemDescription">{game.gameDesc}</div>
-            <button onClick={() => deleteButtonHandler()} className="btn btn-sm btn-warning float-right">
+            <button
+                onClick={() => deleteButtonHandler()}
+                className="btn btn-sm btn-danger deleteButton"
+            >
                 Delete this item
             </button>
         </div>

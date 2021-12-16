@@ -11,27 +11,32 @@
 .publishGameTitle {
   padding-top: 20px;
   margin-left: 20%;
+  font-family: "Raleway", sans-serif;
 }
 
 .publishGameInfo1 {
   margin-left: 20%;
   font-size: 18px;
+  font-family: "Raleway", sans-serif;
 }
 
 .publishGameInfo2 {
   margin-left: 20%;
   font-size: 18px;
+  font-family: "Raleway", sans-serif;
 }
 
 .publishGameInfo3 {
   margin-left: 20%;
   font-size: 18px;
+  font-family: "Raleway", sans-serif;
 }
 
 .publishGameInfo4 {
   margin-left: 20%;
   padding-bottom: 8px;
   font-size: 18px;
+  font-family: "Raleway", sans-serif;
 }
 
 .publishGameFooter {
@@ -42,8 +47,10 @@
 .publishGameFooter1 {
   margin-top: 1%;
   text-align: center;
+  font-family: "Raleway", sans-serif;
 }
 
 .publishGameFooter2 {
   text-align: center;
+  font-family: "Raleway", sans-serif;
 }

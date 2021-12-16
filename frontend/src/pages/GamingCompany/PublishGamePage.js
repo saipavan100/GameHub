@@ -23,8 +23,8 @@ const PublishGamePage = () => {
         You can view your published games in the My Games page and Store page.
       </div>
       <div className="publishGameInfo4">
-        Note: Once you publish a game you cannot edit your published game but
-        you can remove your published game.
+        Once you publish a game you cannot edit your published game but you can
+        remove your published game.
       </div>
       {<PublishGameForm></PublishGameForm>}
       <div className="footer publishGameFooter">

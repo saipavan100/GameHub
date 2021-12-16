@@ -12,12 +12,14 @@
     margin-top: 3%;
     color: #fff;
     font-size: 45px;
+    font-family: "Raleway", sans-serif;
 }
 
 .title2 {
     margin-left: 19%;
     color: #fff;
     font-size: 25px;
+    font-family: "Raleway", sans-serif;
 }
 
 .registerInfoBox {
@@ -25,6 +27,10 @@
     margin-top: 10px;
     color: #fff;
     font-size: 18px;
+}
+
+.registerInfoBox div {
+    font-family: "Raleway", sans-serif;
 }
 
 .registerBox {
@@ -87,10 +93,12 @@
 .footerRegisterSection1 {
     margin-top: 1%;
     text-align: center;
+    font-family: "Raleway", sans-serif;
 }
 
 .footerRegisterSection2 {
     text-align: center;
+    font-family: "Raleway", sans-serif;
 }
 
 .registerTitle {
@@ -103,7 +111,7 @@
 }
 
 .userName label {
-    margin-bottom: .3rem;
+    margin-bottom: 0.3rem;
 }
 
 .password {
@@ -111,7 +119,7 @@
 }
 
 .password label {
-    margin-bottom: .3rem;
+    margin-bottom: 0.3rem;
 }
 
 .selectRole {
@@ -120,7 +128,7 @@
 
 .selectRole label {
     padding-bottom: 0px;
-    margin-bottom: .3rem;
+    margin-bottom: 0.3rem;
 }
 
 .gamingCompany {
@@ -128,5 +136,5 @@
 }
 
 .gamingCompany label {
-    margin-bottom: .3rem;
+    margin-bottom: 0.3rem;
 }

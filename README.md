@@ -1,10 +1,11 @@
 # GameHub
 
-This repository is for Project 3 for the CS5610 Web Development Course.
+This repository is for Project 3 and Project 4 for the CS5610 Web Development Course (updated README for project 4).
+You can check the code for Project 4 in the project4 branch. 
 
 ## Project Objective
 
-The objective of this project is to create a full-stack web application (using Node, Express, MongoDB, and React with Hooks) called GameHub that brings gamers and gaming companies together. GameHub serves as a simple e-commerce web app where registered gamers can view video games, published by registered gaming companies, from the game store and add their favorite video games from the game store into their cart. Gamers also have the option to remove certain video games from their cart. GameHub allows registered gaming companies to publish their video games. After a gaming company publishes their game, they can view their published game from their personal list (MyGames) and from the game store. A gaming company can also have the option to remove their published game from their personal list which would update the game store.  
+The objective of this project is to create a full-stack web application (using Node, Express, MongoDB, and React with Hooks) called GameHub that brings gamers and gaming companies together. There are two types of users/people that can use GameHub, gamers and gaming company publicists. Gamers are any users/people that have little to high interest in video games, and more importantly purchasing video games. GameHub serves as a simple e-commerce web app for registered gamers where they can view and add their video games from the game store, published by various gaming companies, to their cart for purchase. Gaming company publicists can use GameHub to publish and manage published video games under the name of the gaming company they work for. A gaming company publicist can simply publish a video game for the gaming company they work, see their personal list of published games, and remove any of their published games.   
 
 ## Author(s)
 
@@ -13,8 +14,9 @@ The objective of this project is to create a full-stack web application (using N
 
 ## Relevant Links
 - [Class website link](https://johnguerra.co/classes/webDevelopment_fall_2021/)
-- [Video demo link](https://drive.google.com/file/d/1EqrR9VoNFhEyjwyaxW_WUQ7wSPgvu8CL/view?usp=sharing)
-- [Google slides link](https://docs.google.com/presentation/d/1sDh6wsXc9jFuNWVp8kkjJSccw-4F1YPAc6rU9krnK0w/edit?usp=sharing)
+- [Demo video link](https://drive.google.com/file/d/1EqrR9VoNFhEyjwyaxW_WUQ7wSPgvu8CL/view?usp=sharing)
+- [Presentation video link](https://drive.google.com/file/d/1EqrR9VoNFhEyjwyaxW_WUQ7wSPgvu8CL/view?usp=sharing)
+- [Google slides link](https://docs.google.com/presentation/d/1TRGKGfJ2ceX-pgnCyVp-XvWe8_KKmyiVWcP-NMTX414/edit?usp=sharing)
 
 ## Build Instructions
 - Make sure to run `yarn install` in the root of repository and in the frontend folder to have all your node_modules depedencies.
@@ -40,21 +42,21 @@ The objective of this project is to create a full-stack web application (using N
 - Registration(UI, CRUD operations, and routes for register page)
 - Gamer (UI, CRUD operations, and routes for gamer pages)
 
-## Screenshots
+## Screenshots (updated)
 Login Page
 ![Login page screenshot](./frontend/src/images/screenshots/LoginPageScreenshot.jpg)
 Registration Page
 ![Register page screenshot](./frontend/src/images/screenshots/RegisterPageScreenshot.jpg)
-Main Gamer Page
+Gamer Store Page
 ![Gamer page 1 screenshot](./frontend/src/images/screenshots/GamerPageScreenshot1.jpg)
 Gamer Cart Page
 ![Gamer page 2 screenshot](./frontend/src/images/screenshots/GamerPageScreenshot2.jpg)
-Gamer Store Page
-![Gamer page 3 screenshot](./frontend/src/images/screenshots/GamerPageScreenshot3.jpg)
-Gaming company Store Page
+Gaming company publicist Publish Game Page
 ![Gaming company page 1 screenshot](./frontend/src/images/screenshots/GamingCompanyPageScreenshot1.jpg)
-Gaming company My Games Page
+Gaming company publicist My Games Page
 ![Gaming company page 2 screenshot](./frontend/src/images/screenshots/GamingCompanyPageScreenshot2.jpg)
+Gaming company publicist Store Page
+![Gaming company page 3 screenshot](./frontend/src/images/screenshots/GamingCompanyPageScreenshot3.jpg)
 
 
 

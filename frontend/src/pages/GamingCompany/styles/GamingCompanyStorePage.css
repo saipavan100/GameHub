@@ -10,22 +10,26 @@
 .gameStoreTitle {
   padding-top: 20px;
   margin-left: 15%;
+  font-family: "Raleway", sans-serif;
 }
 
 .storeGamesInfo1 {
   font-size: 18px;
   margin-left: 15%;
+  font-family: "Raleway", sans-serif;
 }
 
 .storeGamesInfo2 {
   font-size: 18px;
   margin-left: 15%;
+  font-family: "Raleway", sans-serif;
 }
 
 .storeGamesInfo3 {
   font-size: 18px;
   margin-left: 15%;
   margin-bottom: 20px;
+  font-family: "Raleway", sans-serif;
 }
 
 .storeGamesFooter {
@@ -36,8 +40,10 @@
 .storeGamesFooter1 {
   margin-top: 1%;
   text-align: center;
+  font-family: "Raleway", sans-serif;
 }
 
 .storeGamesFooter2 {
   text-align: center;
+  font-family: "Raleway", sans-serif;
 }

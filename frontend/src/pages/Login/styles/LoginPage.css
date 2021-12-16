@@ -12,19 +12,25 @@
   margin-top: 3%;
   color: #fff;
   font-size: 45px;
+  font-family: "Raleway", sans-serif;
 }
 
 .welcomeTitle2 {
   margin-left: 19%;
   color: #fff;
   font-size: 25px;
+  font-family: "Raleway", sans-serif;
 }
 
-.loginInfoBox{
+.loginInfoBox {
   margin-left: 8px;
   margin-top: 10px;
   color: #fff;
   font-size: 18px;
+}
+
+.loginInfoBox div {
+  font-family: "Raleway", sans-serif;
 }
 
 .loginBox {
@@ -75,10 +81,12 @@
 .footerLoginSection1 {
   margin-top: 1%;
   text-align: center;
+  font-family: "Raleway", sans-serif;
 }
 
 .footerLoginSection2 {
   text-align: center;
+  font-family: "Raleway", sans-serif;
 }
 
 .loginTitle {
@@ -88,7 +96,7 @@
 
 .loginError {
   font-style: italic;
-  color: #fff;
+  color: #dc3545;
 }
 
 .userNameSection {
@@ -96,7 +104,7 @@
 }
 
 .userNameSection label {
-  margin-bottom: .3rem;
+  margin-bottom: 0.3rem;
 }
 
 .passwordSection {
@@ -104,7 +112,7 @@
 }
 
 .passwordSection label {
-  margin-bottom: .3rem;
+  margin-bottom: 0.3rem;
 }
 
 .roleSection {
@@ -112,5 +120,5 @@
 }
 
 .roleSection label {
-  margin-bottom: .3rem;
+  margin-bottom: 0.3rem;
 }

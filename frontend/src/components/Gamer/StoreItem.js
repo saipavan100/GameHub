@@ -25,7 +25,7 @@ const StoreItem = ({ game }) => {
     if (!addResult.ok) {
       console.log("Response status ", addResult.status);
     } else {
-      alert("Game added to your cart!");
+      console.log("Added Successfully");
     }
   };
   return (
@@ -37,13 +37,14 @@ const StoreItem = ({ game }) => {
         <div className="gamerStoreItemTitle">{game.gameTitle}</div>
         <div className="gamerStoreItemPublishedBy">{game.publishedBy}</div>
       </div>
-      <div className="gamerStoreItemPrice">{game.gamePrice}</div>
-      <div className="gamerStoreItemDescription">{game.gameDesc}</div>
-      <button onClick={() => addHandler(game)} className="btn btn-warning">
+      <div className="gamerStoreItemDescription">
+        Description: {game.gameDesc}
+      </div>
+      <div className="gamerStoreItemPrice">${game.gamePrice}</div>
+      <button onClick={() => addHandler(game)} className="btn addButton">
         Add to Cart
       </button>
     </div>
-
   );
 };
 

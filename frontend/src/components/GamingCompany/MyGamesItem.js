@@ -52,7 +52,6 @@ const MyGamesItem = ({ game, loadMyGamesData }) => {
     else {
       let delGameResData = await delGameResRawData.json();
       console.log(delGameResData.message);
-      alert("You removed your published game!");
     }
 
     // load my games and re-render list of my games after deleting
@@ -70,9 +69,7 @@ const MyGamesItem = ({ game, loadMyGamesData }) => {
         <div className="myGamesItemTitle">{game.gameTitle}</div>
         <div className="myGamesItemPublishedBy">{game.publishedBy}</div>
       </div>
-      <div className="myGamesItemDescSection">
-        Description: {game.gameDesc}
-      </div>
+      <div className="myGamesItemDescSection">Description: {game.gameDesc}</div>
       <div className="myGameItemPriceSection">${game.gamePrice}</div>
       <div className="deleteMyGameButtonSection">
         <button onClick={handleDeleteMyGame} className="btn btn-danger">

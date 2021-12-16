@@ -18,11 +18,7 @@ const MyCartList = ({ cart, getCartItems }) => {
 
   return (
     <div className="gamerCartConatiner">
-      <h1 className="gamerCartListTitle">My Cart</h1>
-      <div className="gamerCartListDescription">
-        You can check your cart and delete items that you do not want to buy.
-      </div>
-      <div className="cartItems">{cartList()}</div>
+      s<div className="cartItems">{cartList()}</div>
     </div>
   );
 };
