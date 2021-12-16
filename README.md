@@ -14,8 +14,8 @@ The objective of this project is to create a full-stack web application (using N
 
 ## Relevant Links
 - [Class website link](https://johnguerra.co/classes/webDevelopment_fall_2021/)
-- [Demo video link](https://drive.google.com/file/d/1EqrR9VoNFhEyjwyaxW_WUQ7wSPgvu8CL/view?usp=sharing)
-- [Presentation video link](https://drive.google.com/file/d/1EqrR9VoNFhEyjwyaxW_WUQ7wSPgvu8CL/view?usp=sharing)
+- [Public Demo video link](https://drive.google.com/file/d/1kTtQQTHYF4XbEp8SysMwFdi9p4dtNOQ7/view?usp=sharing)
+- [Presentation video link](https://drive.google.com/file/d/1fN5n7BQlWVHbzqVOxkuG9-R4SfhQ2LRM/view?usp=sharing)
 - [Google slides link](https://docs.google.com/presentation/d/1TRGKGfJ2ceX-pgnCyVp-XvWe8_KKmyiVWcP-NMTX414/edit?usp=sharing)
 
 ## Build Instructions
