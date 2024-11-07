@@ -8,10 +8,10 @@ const DB_NAME = "game-hub-db";
 
 function gameHubDB() {
   // Database operations/functions in gameHubDB object
-  const gameHubDB = {};
+  const gameHubDB = {}; 
 
   // Finds existing user object (based on attributes of user object as a query)
-  // This function is called when a user (gamer or gaming company) logs in and
+  // This function is called when a user (gamer or gaming company) logs in and jj
   // for getting my games for a gaming company user.
   // Nathaniel
   gameHubDB.findUser = async function (user) {
