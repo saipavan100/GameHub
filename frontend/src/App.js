@@ -9,7 +9,7 @@ import GamerStorePage from "./pages/Gamer/GamerStorePage.js";
 import GamerCartPage from "./pages/Gamer/GamerCartPage.js";
 import "./App.css";
 
-function App() {
+function App()  {
   return (
     <div className="App">
       <BrowserRouter>
