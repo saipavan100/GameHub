@@ -8,7 +8,7 @@ router.post("/loginUser", async function (req, res) {
   const user = req.body;
 
   try {
-    // Response of finding a user (array of users that match user data)
+    // Response of finding a user (array of users that match user data))
     const userRes = await gameHubDB.findUser(user);
     console.log("Got user from game-hub-db ", userRes);
     res.status(200).send({ users: userRes });
